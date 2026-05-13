@@ -1,591 +1,726 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muhammad Junaid Hussain | WordPress Developer · SEO Expert · GHL Automation</title>
-<meta name="description" content="Muhammad Junaid Hussain — Front-End Developer, WordPress Expert, SEO Strategist & GoHighLevel Automation Specialist based in Lahore, Pakistan.">
+<meta name="description" content="Muhammad Junaid Hussain — Front-End Developer, WordPress Expert, SEO Strategist & GoHighLevel Automation Specialist based in Lahore, Pakistan. Available for freelance worldwide.">
 <meta name="keywords" content="WordPress Developer Lahore, SEO Expert Pakistan, GoHighLevel GHL Automation, React Developer, Digital Marketing, Business Development">
 <meta name="author" content="Muhammad Junaid Hussain">
 <meta property="og:title" content="Muhammad Junaid Hussain | Developer & Digital Strategist">
-<meta property="og:description" content="Front-End Developer · WordPress Expert · SEO Strategist · GHL Automation Specialist.">
+<meta property="og:description" content="Front-End Developer · WordPress Expert · SEO Strategist · GHL Automation Specialist. Building digital experiences that convert, rank, and grow.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0f;--bg2:#111118;--bg3:#16161f;--surface:#1c1c28;--surface2:#22222f;--accent:#6c63ff;--accent2:#a78bfa;--accent3:#38bdf8;--accent4:#4ade80;--text:#f0f0f8;--text2:#9898b8;--text3:#5a5a7a;--border:rgba(108,99,255,0.18);--border2:rgba(255,255,255,0.06);--glow:rgba(108,99,255,0.25);}
+/* ===================== THEME VARIABLES ===================== */
+:root {
+  --accent:#6c63ff; --accent-h:#5a52e0; --accent2:#a78bfa; --accent3:#38bdf8; --green:#4ade80;
+  --glow:rgba(108,99,255,.22); --glow3:rgba(56,189,248,.15);
+  --radius-sm:6px; --radius-md:10px; --radius-lg:16px; --radius-xl:22px;
+}
+[data-theme="dark"] {
+  --bg:#0b0b12; --bg2:#12121c; --bg3:#17172280;
+  --surface:#1a1a28; --surface2:#21212f; --surface3:#26263580;
+  --text:#eeeef5; --text2:#9898b5; --text3:#52527a;
+  --border:rgba(108,99,255,.16); --border2:rgba(255,255,255,.07); --border3:rgba(255,255,255,.04);
+  --nav-bg:rgba(11,11,18,.9); --card-bg:#1a1a28;
+  --shadow:0 4px 30px rgba(0,0,0,.4); --shadow-lg:0 12px 50px rgba(0,0,0,.5);
+  --noise-op:.04;
+}
+[data-theme="light"] {
+  --bg:#f5f5fa; --bg2:#eeeef5; --bg3:rgba(255,255,255,.7);
+  --surface:#ffffff; --surface2:#f0f0f8; --surface3:rgba(255,255,255,.6);
+  --text:#0e0e1a; --text2:#4a4a6a; --text3:#9898b5;
+  --border:rgba(108,99,255,.18); --border2:rgba(0,0,0,.07); --border3:rgba(0,0,0,.04);
+  --nav-bg:rgba(245,245,250,.92); --card-bg:#ffffff;
+  --shadow:0 2px 20px rgba(0,0,0,.08); --shadow-lg:0 8px 40px rgba(0,0,0,.12);
+  --noise-op:.015;
+}
+
+/* ===================== RESET & BASE ===================== */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4;}
-::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;transition:background .35s,color .35s;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:var(--noise-op);pointer-events:none;z-index:1;mix-blend-mode:overlay;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
 
-/* CURSOR */
-.cursor{position:fixed;width:10px;height:10px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transition:transform .15s;mix-blend-mode:screen;}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(108,99,255,.5);border-radius:50%;pointer-events:none;z-index:9998;transition:all .1s;}
+/* ===================== CURSOR ===================== */
+.cur{position:fixed;width:10px;height:10px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transition:transform .12s;}
+.cur-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(108,99,255,.5);border-radius:50%;pointer-events:none;z-index:9998;transition:width .2s,height .2s,border-color .2s;}
+@media(max-width:768px){.cur,.cur-ring{display:none;}}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 5%;background:rgba(10,10,15,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);transition:all .3s;}
-nav.scrolled{padding:.8rem 5%;background:rgba(10,10,15,.97);}
-.nav-logo{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.02em;}
-.nav-logo span{color:var(--accent);}
-.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center;}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:.84rem;font-weight:500;transition:color .2s;position:relative;}
-.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:var(--accent);transition:width .25s;}
-.nav-links a:hover{color:var(--text);}
-.nav-links a:hover::after{width:100%;}
-.nav-cta{background:var(--accent)!important;color:#fff!important;padding:.42rem 1.1rem;border-radius:6px;}
-.nav-cta::after{display:none!important;}
-.nav-cta:hover{background:#5a52e0!important;}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:600;}
-.hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,.98);backdrop-filter:blur(24px);z-index:450;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.77,0,.175,1);}
-.mobile-menu.open{transform:translateX(0);}
-.mobile-menu a{font-family:'Syne',sans-serif;font-size:2rem;font-weight:700;color:var(--text2);text-decoration:none;transition:color .2s;}
-.mobile-menu a:hover{color:var(--accent);}
-.mobile-menu .m-cta{background:var(--accent);color:#fff!important;padding:.55rem 2rem;border-radius:8px;font-size:1.2rem;}
+/* ===================== THEME TOGGLE ===================== */
+.theme-toggle{width:44px;height:24px;background:var(--surface2);border:1px solid var(--border2);border-radius:100px;cursor:pointer;position:relative;transition:all .3s;flex-shrink:0;}
+.theme-toggle::before{content:'';position:absolute;left:3px;top:50%;transform:translateY(-50%);width:18px;height:18px;border-radius:50%;background:var(--accent);transition:left .3s,background .3s;}
+[data-theme="light"] .theme-toggle::before{left:calc(100% - 21px);}
+.theme-icon{font-size:.8rem;position:absolute;top:50%;transform:translateY(-50%);transition:opacity .3s;}
+.theme-icon.sun{right:5px;opacity:0;}
+.theme-icon.moon{left:5px;}
+[data-theme="light"] .theme-icon.sun{opacity:1;}
+[data-theme="light"] .theme-icon.moon{opacity:0;}
 
-/* HERO */
+/* ===================== NAV ===================== */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);transition:padding .3s,background .35s,border-color .35s;}
+nav.scrolled{padding:.75rem 5%;}
+.nav-logo{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.02em;display:flex;align-items:center;gap:.2rem;}
+.nav-logo .dot{color:var(--accent);}
+.nav-center{display:flex;gap:1.7rem;list-style:none;align-items:center;}
+.nav-center a{color:var(--text2);text-decoration:none;font-size:.84rem;font-weight:500;transition:color .2s;letter-spacing:.01em;position:relative;padding-bottom:2px;}
+.nav-center a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--accent);transition:width .25s;}
+.nav-center a:hover{color:var(--text);}
+.nav-center a:hover::after{width:100%;}
+.nav-right{display:flex;align-items:center;gap:.9rem;}
+.nav-hire{background:var(--accent);color:#fff;padding:.4rem 1.1rem;border-radius:var(--radius-sm);font-size:.83rem;font-weight:600;text-decoration:none;transition:all .2s;white-space:nowrap;}
+.nav-hire:hover{background:var(--accent-h);transform:translateY(-1px);}
+
+/* HAMBURGER */
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:600;}
+.ham span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham.open span:nth-child(2){opacity:0;}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-menu{position:fixed;inset:0;background:var(--bg);z-index:450;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.2rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.77,0,.175,1);}
+.mob-menu.open{transform:translateX(0);}
+.mob-menu a{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:700;color:var(--text2);text-decoration:none;transition:color .2s;}
+.mob-menu a:hover{color:var(--accent);}
+.mob-cta{background:var(--accent);color:#fff!important;padding:.5rem 1.8rem;border-radius:8px;font-size:1.4rem!important;}
+.mob-theme{display:flex;align-items:center;gap:.7rem;color:var(--text2);font-size:.9rem;}
+
+/* ===================== HERO ===================== */
 .hero{min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;position:relative;overflow:hidden;}
-.orb1{position:absolute;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,.1) 0%,transparent 70%);top:-180px;right:-120px;pointer-events:none;animation:fl1 9s ease-in-out infinite;}
-.orb2{position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.07) 0%,transparent 70%);bottom:-80px;left:5%;pointer-events:none;animation:fl2 11s ease-in-out infinite;}
-@keyframes fl1{0%,100%{transform:translateY(0);}50%{transform:translateY(-28px);}}
-@keyframes fl2{0%,100%{transform:translateY(0);}50%{transform:translateY(22px);}}
-.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(108,99,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(108,99,255,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;mask-image:radial-gradient(ellipse at center,rgba(0,0,0,.55),transparent 70%);}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;width:100%;position:relative;}
-.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.25);color:var(--accent2);font-size:.74rem;font-weight:500;padding:.32rem .9rem;border-radius:100px;margin-bottom:1.2rem;letter-spacing:.04em;text-transform:uppercase;}
-.hero-tag .dot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:blink 2s infinite;}
-@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.5);}50%{opacity:.5;box-shadow:0 0 0 6px rgba(74,222,128,0);}}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.5rem,4.2vw,3.9rem);font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-bottom:1rem;}
+.orb1,.orb2,.orb3{position:absolute;border-radius:50%;pointer-events:none;}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(108,99,255,.12) 0%,transparent 70%);top:-150px;right:-100px;animation:fl 9s ease-in-out infinite;}
+.orb2{width:450px;height:450px;background:radial-gradient(circle,rgba(56,189,248,.08) 0%,transparent 70%);bottom:-80px;left:3%;animation:fl 11s ease-in-out infinite reverse;}
+.orb3{width:280px;height:280px;background:radial-gradient(circle,rgba(74,222,128,.06) 0%,transparent 70%);top:45%;left:38%;animation:fl 13s ease-in-out infinite;}
+[data-theme="light"] .orb1{background:radial-gradient(circle,rgba(108,99,255,.08) 0%,transparent 70%);}
+[data-theme="light"] .orb2{background:radial-gradient(circle,rgba(56,189,248,.06) 0%,transparent 70%);}
+@keyframes fl{0%,100%{transform:translateY(0);}50%{transform:translateY(-25px);}}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--border2) 1px,transparent 1px),linear-gradient(90deg,var(--border2) 1px,transparent 1px);background-size:55px 55px;pointer-events:none;mask-image:radial-gradient(ellipse at center,rgba(0,0,0,.5),transparent 72%);}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2;}
+.hero-badge{display:inline-flex;align-items:center;gap:.45rem;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.25);color:var(--accent2);font-size:.73rem;font-weight:600;padding:.3rem .85rem;border-radius:100px;margin-bottom:1.2rem;letter-spacing:.05em;text-transform:uppercase;}
+.pulse{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse-a 2s infinite;}
+@keyframes pulse-a{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.5);}50%{box-shadow:0 0 0 6px rgba(74,222,128,0);}}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-bottom:.9rem;}
 .hero h1 .line{display:block;overflow:hidden;}
-.hero h1 .inner{display:inline-block;opacity:0;transform:translateY(40px);transition:opacity .85s ease,transform .85s ease;}
-.accent{color:var(--accent);}.accent3c{color:var(--accent3);}
-.typing-wrap{font-family:'Syne',sans-serif;font-size:clamp(.95rem,1.8vw,1.2rem);font-weight:600;color:var(--accent2);margin-bottom:1rem;min-height:1.7em;display:flex;align-items:center;gap:.35rem;}
-.tcur{display:inline-block;width:2px;height:1.1em;background:var(--accent);animation:bc .75s step-end infinite;}
-@keyframes bc{0%,100%{opacity:1;}50%{opacity:0;}}
-.hero-desc{color:var(--text2);font-size:.98rem;line-height:1.75;margin-bottom:1.8rem;max-width:480px;}
-.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:1.5rem;}
-.btn-p{background:var(--accent);color:#fff;padding:.72rem 1.6rem;border-radius:8px;font-weight:500;text-decoration:none;font-size:.88rem;transition:all .25s;border:none;display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;}
-.btn-p:hover{background:#5a52e0;transform:translateY(-2px);box-shadow:0 8px 25px rgba(108,99,255,.4);}
-.btn-o{background:transparent;color:var(--text);padding:.72rem 1.6rem;border-radius:8px;font-weight:500;text-decoration:none;font-size:.88rem;transition:all .25s;border:1px solid var(--border);display:inline-flex;align-items:center;gap:.4rem;}
-.btn-o:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
-.btn-cv{background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.25);padding:.72rem 1.6rem;border-radius:8px;font-weight:500;text-decoration:none;font-size:.88rem;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem;}
-.btn-cv:hover{background:rgba(74,222,128,.2);transform:translateY(-2px);}
-.trust{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
-.trust-label{font-size:.73rem;color:var(--text3);letter-spacing:.04em;text-transform:uppercase;}
-.trust-badges{display:flex;gap:.4rem;}
-.tbadge{font-size:.7rem;background:var(--surface);border:1px solid var(--border2);color:var(--text2);padding:.18rem .55rem;border-radius:100px;}
+.hero h1 .inner{display:inline-block;opacity:0;transform:translateY(38px);transition:opacity .8s ease,transform .8s ease;}
+.ac1{color:var(--accent);} .ac2{color:var(--accent3);}
+.type-row{font-family:'Syne',sans-serif;font-size:clamp(.9rem,1.7vw,1.15rem);font-weight:600;color:var(--accent2);margin-bottom:.9rem;min-height:1.6em;display:flex;align-items:center;gap:.3rem;}
+.tcur{width:2px;height:1.1em;background:var(--accent);display:inline-block;animation:blink .7s step-end infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.hero-desc{color:var(--text2);font-size:.97rem;line-height:1.75;margin-bottom:1.7rem;max-width:470px;}
+.btn-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.btn-primary{background:var(--accent);color:#fff;padding:.7rem 1.55rem;border-radius:var(--radius-md);font-weight:600;text-decoration:none;font-size:.875rem;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-2px);box-shadow:0 8px 24px var(--glow);}
+.btn-ghost{background:transparent;color:var(--text);padding:.7rem 1.55rem;border-radius:var(--radius-md);font-weight:500;text-decoration:none;font-size:.875rem;transition:all .25s;border:1.5px solid var(--border);display:inline-flex;align-items:center;gap:.4rem;}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+.btn-cv{background:rgba(74,222,128,.1);color:var(--green);border:1.5px solid rgba(74,222,128,.28);padding:.7rem 1.55rem;border-radius:var(--radius-md);font-weight:500;text-decoration:none;font-size:.875rem;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem;}
+.btn-cv:hover{background:rgba(74,222,128,.18);transform:translateY(-2px);}
+.trust{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;}
+.trust-txt{font-size:.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;}
+.tbadge{font-size:.7rem;background:var(--surface);border:1px solid var(--border2);color:var(--text2);padding:.18rem .55rem;border-radius:100px;box-shadow:var(--shadow);}
 
 /* HERO CARD */
-.hcard{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2.1rem;position:relative;overflow:hidden;transform-style:preserve-3d;}
-.hcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent3),var(--accent4));}
-.hcard::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(108,99,255,.06),transparent 60%);pointer-events:none;}
-.havatar{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:#fff;margin-bottom:1.1rem;border:2px solid rgba(108,99,255,.3);overflow:hidden;}
-.havatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;}
-.cname{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:.2rem;}
-.ctitle{color:var(--accent2);font-size:.8rem;font-weight:500;margin-bottom:1.1rem;}
-.cstats{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:1.1rem;}
-.sbox{background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:.7rem;text-align:center;transition:border-color .2s;}
-.sbox:hover{border-color:rgba(108,99,255,.3);}
-.snum{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;color:var(--accent);display:block;}
-.slabel{font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;}
-.cbadges{display:flex;flex-wrap:wrap;gap:.32rem;}
-.cbadge{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);color:var(--accent2);font-size:.68rem;padding:.2rem .52rem;border-radius:100px;font-weight:500;}
-.online-b{display:inline-flex;align-items:center;gap:.35rem;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);color:#4ade80;font-size:.68rem;padding:.2rem .52rem;border-radius:100px;font-weight:500;margin-top:.4rem;}
-.od{width:5px;height:5px;background:#4ade80;border-radius:50%;animation:blink 2s infinite;}
+.hcard{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-xl);padding:2rem;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);transform-style:preserve-3d;transition:box-shadow .3s,border-color .35s,background .35s;}
+.hcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent3),var(--green));border-radius:var(--radius-xl) var(--radius-xl) 0 0;}
+.hcard::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(108,99,255,.05),transparent 55%);pointer-events:none;}
+.havatar{width:86px;height:86px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:1rem;border:2.5px solid var(--border);overflow:hidden;box-shadow:0 0 0 4px rgba(108,99,255,.1);}
+.havatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;}
+.cname{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.15rem;color:var(--text);}
+.ctitle{color:var(--accent2);font-size:.8rem;font-weight:500;margin-bottom:1rem;}
+.cstats{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:1rem;}
+.sbox{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-md);padding:.7rem;text-align:center;transition:all .25s;}
+.sbox:hover{border-color:rgba(108,99,255,.35);transform:translateY(-2px);}
+.snum{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--accent);display:block;}
+.slabel{font-size:.63rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;}
+.cbadges{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.6rem;}
+.cbadge{background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.18);color:var(--accent2);font-size:.68rem;padding:.2rem .5rem;border-radius:100px;font-weight:500;transition:all .2s;}
+.cbadge:hover{background:rgba(108,99,255,.18);}
+.online{display:inline-flex;align-items:center;gap:.35rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.22);color:var(--green);font-size:.68rem;padding:.2rem .5rem;border-radius:100px;font-weight:500;}
+.od{width:5px;height:5px;background:var(--green);border-radius:50%;animation:pulse-a 2s infinite;}
 
-/* SECTIONS */
-section{padding:95px 5%;position:relative;}
+/* ===================== LAYOUT ===================== */
+section{padding:90px 5%;position:relative;}
 .si{max-width:1200px;margin:0 auto;}
-.slbl{font-size:.7rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem;}
-.slbl::before{content:'';width:18px;height:1.5px;background:var(--accent);}
-.stitle{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,2.8vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:.8rem;}
-.sdesc{color:var(--text2);font-size:.97rem;max-width:510px;line-height:1.7;}
-.sh{margin-bottom:3.2rem;}
-.dark{background:var(--bg2);}
+.sec-lbl{font-size:.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem;}
+.sec-lbl::before{content:'';width:16px;height:1.5px;background:var(--accent);}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.65rem,2.6vw,2.35rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:.75rem;color:var(--text);}
+.sec-desc{color:var(--text2);font-size:.95rem;max-width:500px;line-height:1.7;}
+.sec-head{margin-bottom:3rem;}
+.alt-bg{background:var(--bg2);}
 
-/* METRICS */
-.mbar{padding:45px 5%;background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);}
-.minner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
-.mitem{text-align:center;}
-.mnum{font-family:'Syne',sans-serif;font-size:2.3rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1;}
-.mlabel{font-size:.75rem;color:var(--text3);margin-top:.35rem;text-transform:uppercase;letter-spacing:.05em;}
+/* DIVIDER */
+.div-line{height:1px;background:var(--border2);max-width:1200px;margin:0 auto;}
 
-/* SKILLS */
-.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.9rem;}
-.skcard{background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:1.1rem 1rem;text-align:center;transition:all .3s;cursor:default;position:relative;overflow:hidden;}
-.skcard::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(108,99,255,.04),transparent);opacity:0;transition:opacity .3s;}
-.skcard:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 10px 30px var(--glow);}
-.skcard:hover::before{opacity:1;}
-.skico{font-size:1.7rem;margin-bottom:.45rem;display:block;}
-.sknm{font-size:.8rem;font-weight:500;color:var(--text2);}
-.sklvl{margin-top:.55rem;height:3px;background:var(--bg3);border-radius:100px;overflow:hidden;}
-.skfill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent3));border-radius:100px;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+/* ===================== METRICS ===================== */
+.metrics{padding:40px 5%;background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);}
+.met-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.met-item{text-align:center;padding:.5rem 0;}
+.met-num{font-family:'Syne',sans-serif;font-size:2.1rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1;}
+.met-lbl{font-size:.75rem;color:var(--text3);margin-top:.3rem;text-transform:uppercase;letter-spacing:.06em;}
 
-/* EXPERIENCE */
-.etl{position:relative;padding-left:2rem;}
-.etl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1.5px;background:linear-gradient(180deg,var(--accent),rgba(108,99,255,.05));}
-.eitem{position:relative;margin-bottom:2.2rem;}
-.eitem::before{content:'';position:absolute;left:-2rem;top:10px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(108,99,255,.2);transform:translateX(-3.5px);}
-.ecard{background:var(--surface);border:1px solid var(--border2);border-radius:15px;padding:1.5rem 1.7rem;transition:all .25s;position:relative;overflow:hidden;}
-.ecard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--accent3));}
-.ecard:hover{border-color:rgba(108,99,255,.25);transform:translateX(4px);}
-.ehead{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.55rem;flex-wrap:wrap;gap:.4rem;}
-.erole{font-family:'Syne',sans-serif;font-size:1.02rem;font-weight:700;}
-.eco{color:var(--accent2);font-size:.83rem;font-weight:500;margin-bottom:.65rem;}
-.edate{color:var(--text3);font-size:.76rem;background:var(--bg3);border:1px solid var(--border2);padding:.18rem .55rem;border-radius:100px;white-space:nowrap;}
-.edesc{color:var(--text2);font-size:.86rem;line-height:1.7;}
-.etags{display:flex;flex-wrap:wrap;gap:.32rem;margin-top:.65rem;}
-.etag{background:var(--bg3);border:1px solid var(--border2);color:var(--text3);font-size:.66rem;padding:.16rem .48rem;border-radius:100px;}
+/* ===================== SKILLS ===================== */
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:.9rem;}
+.sk-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.1rem .9rem;text-align:center;transition:all .3s;cursor:default;box-shadow:var(--shadow);}
+.sk-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 10px 30px var(--glow);}
+.sk-ico{font-size:1.65rem;margin-bottom:.4rem;display:block;}
+.sk-nm{font-size:.79rem;font-weight:500;color:var(--text2);}
+.sk-bar{margin-top:.55rem;height:3px;background:var(--surface2);border-radius:100px;overflow:hidden;}
+.sk-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent3));border-radius:100px;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
 
-/* SERVICES */
-.svgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.1rem;}
-.svcard{background:var(--surface);border:1px solid var(--border2);border-radius:15px;padding:1.7rem;transition:all .3s;position:relative;overflow:hidden;}
-.svcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent3));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
-.svcard:hover{border-color:rgba(108,99,255,.3);transform:translateY(-5px);box-shadow:0 14px 40px var(--glow);}
-.svcard:hover::after{transform:scaleX(1);}
-.svico{width:46px;height:46px;border-radius:11px;background:rgba(108,99,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem;border:1px solid rgba(108,99,255,.2);transition:all .3s;}
-.svcard:hover .svico{background:rgba(108,99,255,.2);transform:scale(1.1);}
-.svtitle{font-family:'Syne',sans-serif;font-size:.97rem;font-weight:700;margin-bottom:.45rem;}
-.svdesc{color:var(--text2);font-size:.83rem;line-height:1.65;}
-.svlist{list-style:none;margin-top:.65rem;}
-.svlist li{font-size:.78rem;color:var(--text3);padding:.18rem 0;display:flex;align-items:center;gap:.38rem;}
-.svlist li::before{content:'→';color:var(--accent);font-size:.72rem;}
+/* ===================== EXPERIENCE ===================== */
+.exp-tl{position:relative;padding-left:2rem;}
+.exp-tl::before{content:'';position:absolute;left:0;top:10px;bottom:0;width:1.5px;background:linear-gradient(180deg,var(--accent),rgba(108,99,255,.05));}
+.exp-item{position:relative;margin-bottom:2rem;}
+.exp-item::before{content:'';position:absolute;left:-2rem;top:11px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(108,99,255,.18);transform:translateX(-3.5px);}
+.exp-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.5rem 1.65rem;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:all .25s;}
+.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--accent3));}
+.exp-card:hover{border-color:rgba(108,99,255,.25);transform:translateX(3px);}
+.exp-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;flex-wrap:wrap;gap:.4rem;}
+.exp-role{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);}
+.exp-co{color:var(--accent2);font-size:.82rem;font-weight:500;margin-bottom:.65rem;}
+.exp-date{color:var(--text3);font-size:.74rem;background:var(--surface2);border:1px solid var(--border2);padding:.18rem .55rem;border-radius:100px;white-space:nowrap;}
+.exp-desc{color:var(--text2);font-size:.86rem;line-height:1.72;}
+.exp-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.65rem;}
+.exp-tag{background:var(--surface2);border:1px solid var(--border2);color:var(--text3);font-size:.66rem;padding:.16rem .48rem;border-radius:100px;}
 
-/* PROJECTS */
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.4rem;}
-.pcard{background:var(--surface);border:1px solid var(--border2);border-radius:15px;overflow:hidden;transition:all .3s;}
-.pcard:hover{border-color:rgba(108,99,255,.3);transform:translateY(-5px);box-shadow:0 14px 45px rgba(0,0,0,.35);}
-.pthumb{height:170px;display:flex;align-items:center;justify-content:center;font-size:2.7rem;position:relative;overflow:hidden;border-bottom:1px solid var(--border2);}
-.purl{position:absolute;bottom:10px;right:10px;font-size:.66rem;background:rgba(0,0,0,.75);border:1px solid var(--border2);color:var(--text2);padding:.18rem .48rem;border-radius:5px;font-family:monospace;}
+/* ===================== SERVICES ===================== */
+.sv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.1rem;}
+.sv-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.65rem;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:all .3s;}
+.sv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent3));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.sv-card:hover{border-color:rgba(108,99,255,.3);transform:translateY(-5px);box-shadow:0 14px 38px var(--glow);}
+.sv-card:hover::after{transform:scaleX(1);}
+.sv-ico{width:44px;height:44px;border-radius:10px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1rem;transition:all .3s;}
+.sv-card:hover .sv-ico{background:rgba(108,99,255,.2);transform:scale(1.08);}
+.sv-title{font-family:'Syne',sans-serif;font-size:.96rem;font-weight:700;margin-bottom:.45rem;color:var(--text);}
+.sv-desc{color:var(--text2);font-size:.83rem;line-height:1.65;}
+.sv-list{list-style:none;margin-top:.65rem;}
+.sv-list li{font-size:.78rem;color:var(--text3);padding:.18rem 0;display:flex;align-items:center;gap:.38rem;}
+.sv-list li::before{content:'→';color:var(--accent);font-size:.72rem;}
+
+/* ===================== PROJECTS ===================== */
+.pj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(305px,1fr));gap:1.35rem;}
+.pj-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:all .3s;}
+.pj-card:hover{border-color:rgba(108,99,255,.28);transform:translateY(-5px);box-shadow:0 14px 44px rgba(0,0,0,.2);}
+.pj-thumb{height:165px;display:flex;align-items:center;justify-content:center;font-size:2.7rem;position:relative;border-bottom:1px solid var(--border2);}
+.pj-url{position:absolute;bottom:9px;right:9px;font-size:.64rem;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.8);padding:.18rem .48rem;border-radius:5px;font-family:monospace;}
 .pb1{background:linear-gradient(135deg,#100a30,#2a1870);}
 .pb2{background:linear-gradient(135deg,#0c1a30,#1a3d70);}
 .pb3{background:linear-gradient(135deg,#0d1f10,#1a4025);}
 .pb4{background:linear-gradient(135deg,#1a0a0a,#3d1010);}
 .pb5{background:linear-gradient(135deg,#0a1a2a,#0a2a3a);}
 .pb6{background:linear-gradient(135deg,#1a0a2a,#2a1048);}
-.pbody{padding:1.2rem;}
-.ptags{display:flex;gap:.32rem;margin-bottom:.55rem;flex-wrap:wrap;}
-.ptag{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);color:var(--accent2);font-size:.64rem;padding:.16rem .48rem;border-radius:100px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;}
-.ptitle{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;margin-bottom:.3rem;line-height:1.3;}
-.pdesc{color:var(--text2);font-size:.8rem;line-height:1.6;margin-bottom:.8rem;}
-.plink{display:inline-flex;align-items:center;gap:.32rem;color:var(--accent);font-size:.78rem;font-weight:500;text-decoration:none;transition:gap .2s;}
-.plink:hover{gap:.55rem;}
-.plink::after{content:'→';}
+.pj-body{padding:1.2rem;}
+.pj-tags{display:flex;gap:.3rem;margin-bottom:.55rem;flex-wrap:wrap;}
+.pj-tag{background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.18);color:var(--accent2);font-size:.63rem;padding:.16rem .48rem;border-radius:100px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+.pj-title{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;margin-bottom:.28rem;color:var(--text);}
+.pj-desc{color:var(--text2);font-size:.79rem;line-height:1.6;margin-bottom:.8rem;}
+.pj-link{display:inline-flex;align-items:center;gap:.3rem;color:var(--accent);font-size:.78rem;font-weight:600;text-decoration:none;transition:gap .2s;}
+.pj-link:hover{gap:.52rem;}
+.pj-link::after{content:'→';}
 
-/* CASE STUDIES */
-.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.4rem;}
-.ccard{background:var(--surface);border:1px solid var(--border2);border-radius:15px;overflow:hidden;transition:all .25s;}
-.ccard:hover{border-color:rgba(108,99,255,.25);transform:translateY(-3px);box-shadow:0 12px 38px rgba(0,0,0,.3);}
-.ctop{height:148px;display:flex;align-items:center;justify-content:center;font-size:3.2rem;}
-.ct1{background:linear-gradient(135deg,#1a1040,#2d1b69);}
-.ct2{background:linear-gradient(135deg,#0c2340,#1a4a7a);}
-.ct3{background:linear-gradient(135deg,#0d2d1a,#1a5c38);}
-.cbody{padding:1.3rem;}
-.ctag{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);color:var(--accent2);font-size:.66rem;padding:.16rem .52rem;border-radius:100px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;display:inline-block;margin-bottom:.65rem;}
-.ctitle2{font-family:'Syne',sans-serif;font-size:.94rem;font-weight:700;margin-bottom:.42rem;line-height:1.3;}
-.cdesc{color:var(--text2);font-size:.81rem;line-height:1.6;}
-.cresults{display:flex;gap:.75rem;margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border2);}
-.ritem{flex:1;}
-.rnum{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--accent);display:block;}
-.rlabel{font-size:.65rem;color:var(--text3);}
+/* ===================== CASE STUDIES ===================== */
+.cs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(325px,1fr));gap:1.35rem;}
+.cs-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:all .25s;}
+.cs-card:hover{border-color:rgba(108,99,255,.25);transform:translateY(-4px);box-shadow:0 12px 38px rgba(0,0,0,.18);}
+.cs-top{height:148px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;}
+.cs-label{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);color:rgba(255,255,255,.85);font-size:.64rem;padding:.2rem .55rem;border-radius:100px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+.cs-t1{background:linear-gradient(135deg,#1a1040,#2d1b69);}
+.cs-t2{background:linear-gradient(135deg,#0c2340,#1a4a7a);}
+.cs-t3{background:linear-gradient(135deg,#0d2d1a,#1a5c38);}
+.cs-t4{background:linear-gradient(135deg,#2a1010,#5c1a0d);}
+.cs-t5{background:linear-gradient(135deg,#0a1a2a,#0d3040);}
+.cs-t6{background:linear-gradient(135deg,#1f1040,#3a1570);}
+.cs-body{padding:1.3rem;}
+.cs-tag{background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.18);color:var(--accent2);font-size:.63rem;padding:.16rem .5rem;border-radius:100px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;display:inline-block;margin-bottom:.6rem;}
+.cs-title{font-family:'Syne',sans-serif;font-size:.93rem;font-weight:700;margin-bottom:.4rem;line-height:1.3;color:var(--text);}
+.cs-desc{color:var(--text2);font-size:.8rem;line-height:1.62;}
+.cs-results{display:flex;gap:.7rem;margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border2);}
+.cs-ri{flex:1;}
+.cs-rn{font-family:'Syne',sans-serif;font-size:.98rem;font-weight:800;color:var(--accent);display:block;}
+.cs-rl{font-size:.63rem;color:var(--text3);}
 
-/* TESTIMONIALS */
-.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.1rem;}
-.tcard{background:var(--surface);border:1px solid var(--border2);border-radius:15px;padding:1.7rem;transition:all .25s;}
-.tcard:hover{border-color:rgba(108,99,255,.25);transform:translateY(-3px);}
-.tquo{font-size:2.3rem;color:var(--accent);line-height:1;margin-bottom:.65rem;font-family:'Syne',sans-serif;}
-.ttext{color:var(--text2);font-size:.87rem;line-height:1.7;margin-bottom:1.1rem;font-style:italic;}
-.tauthor{display:flex;align-items:center;gap:.7rem;}
-.tavatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;color:#fff;flex-shrink:0;}
-.tname{font-weight:600;font-size:.85rem;}
-.trole{font-size:.72rem;color:var(--text3);}
-.tstars{color:#facc15;font-size:.78rem;margin-bottom:.45rem;}
+/* ===================== TESTIMONIALS ===================== */
+.ts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;}
+.ts-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.65rem;box-shadow:var(--shadow);transition:all .25s;}
+.ts-card:hover{border-color:rgba(108,99,255,.25);transform:translateY(-3px);}
+.ts-stars{color:#f59e0b;font-size:.8rem;margin-bottom:.45rem;}
+.ts-quote{font-size:2rem;color:var(--accent);line-height:1;margin-bottom:.55rem;font-family:'Syne',sans-serif;}
+.ts-text{color:var(--text2);font-size:.86rem;line-height:1.72;margin-bottom:1rem;font-style:italic;}
+.ts-author{display:flex;align-items:center;gap:.65rem;}
+.ts-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:#fff;flex-shrink:0;}
+.ts-name{font-weight:600;font-size:.84rem;color:var(--text);}
+.ts-role{font-size:.72rem;color:var(--text3);}
 
-/* EDUCATION */
-.egrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.1rem;}
-.educard{background:var(--surface);border:1px solid var(--border2);border-radius:13px;padding:1.4rem;transition:all .25s;display:flex;gap:.9rem;align-items:flex-start;}
-.educard:hover{border-color:rgba(108,99,255,.25);}
-.eduico{width:42px;height:42px;border-radius:9px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
-.edudeg{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;margin-bottom:.12rem;}
-.eduinst{color:var(--accent2);font-size:.78rem;font-weight:500;margin-bottom:.12rem;}
-.eduyear{color:var(--text3);font-size:.73rem;}
+/* ===================== EDUCATION ===================== */
+.ed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1rem;}
+.ed-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.35rem;box-shadow:var(--shadow);display:flex;gap:.85rem;align-items:flex-start;transition:all .25s;}
+.ed-card:hover{border-color:rgba(108,99,255,.25);}
+.ed-ico{width:40px;height:40px;border-radius:9px;background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.18);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
+.ed-deg{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--text);}
+.ed-inst{color:var(--accent2);font-size:.78rem;font-weight:500;}
+.ed-yr{color:var(--text3);font-size:.72rem;margin-top:.1rem;}
 
-/* CONTACT */
-.congrid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
-.conh3{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:700;margin-bottom:.65rem;}
-.conlinks{display:flex;flex-direction:column;gap:.65rem;margin-top:1.2rem;}
-.conlink{display:flex;align-items:center;gap:.85rem;color:var(--text2);text-decoration:none;padding:.75rem .95rem;background:var(--surface);border:1px solid var(--border2);border-radius:9px;font-size:.86rem;transition:all .25s;}
-.conlink:hover{border-color:var(--accent);color:var(--text);transform:translateX(4px);}
-.clico{width:34px;height:34px;border-radius:7px;background:rgba(108,99,255,.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:background .25s;}
-.conlink:hover .clico{background:rgba(108,99,255,.2);}
-.cform{display:flex;flex-direction:column;gap:.85rem;}
-.fg{display:flex;flex-direction:column;gap:.32rem;}
-.flabel{font-size:.76rem;font-weight:500;color:var(--text2);letter-spacing:.03em;}
-.finput,.ftextarea,.fselect{background:var(--surface);border:1px solid var(--border2);border-radius:7px;padding:.65rem .95rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.86rem;outline:none;transition:border-color .2s;resize:none;width:100%;}
-.finput:focus,.ftextarea:focus,.fselect:focus{border-color:var(--accent);}
-.finput::placeholder,.ftextarea::placeholder{color:var(--text3);}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
-.fselect{cursor:pointer;-webkit-appearance:none;}
-option{background:var(--bg3);}
-.fsucc{display:none;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);color:#4ade80;padding:.9rem;border-radius:7px;font-size:.85rem;text-align:center;}
-.sbtn{background:var(--accent);color:#fff;border:none;padding:.8rem 1.4rem;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:500;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.4rem;}
-.sbtn:hover{background:#5a52e0;transform:translateY(-2px);box-shadow:0 8px 22px rgba(108,99,255,.4);}
+/* ===================== CONTACT ===================== */
+.con-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+.con-h3{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.6rem;color:var(--text);}
+.con-links{display:flex;flex-direction:column;gap:.6rem;margin-top:1.1rem;}
+.con-link{display:flex;align-items:center;gap:.8rem;color:var(--text2);text-decoration:none;padding:.72rem .9rem;background:var(--card-bg);border:1px solid var(--border2);border-radius:var(--radius-md);font-size:.85rem;box-shadow:var(--shadow);transition:all .25s;}
+.con-link:hover{border-color:var(--accent);color:var(--text);transform:translateX(4px);}
+.cl-ico{width:32px;height:32px;border-radius:7px;background:rgba(108,99,255,.08);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;transition:background .25s;}
+.con-link:hover .cl-ico{background:rgba(108,99,255,.18);}
+.cf{display:flex;flex-direction:column;gap:.8rem;}
+.fg{display:flex;flex-direction:column;gap:.3rem;}
+.flbl{font-size:.75rem;font-weight:600;color:var(--text2);letter-spacing:.04em;}
+.fi,.fta,.fse{background:var(--card-bg);border:1px solid var(--border2);border-radius:var(--radius-md);padding:.65rem .9rem;color:var(--text);font-family:'Inter',sans-serif;font-size:.86rem;outline:none;transition:border-color .2s,box-shadow .2s;resize:none;width:100%;box-shadow:var(--shadow);}
+.fi:focus,.fta:focus,.fse:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,99,255,.12);}
+.fi::placeholder,.fta::placeholder{color:var(--text3);}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+.fse{cursor:pointer;-webkit-appearance:none;}
+option{background:var(--bg2);}
+.f-succ{display:none;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.28);color:var(--green);padding:.85rem;border-radius:var(--radius-md);font-size:.84rem;text-align:center;}
+.sbtn{background:var(--accent);color:#fff;border:none;padding:.78rem 1.35rem;border-radius:var(--radius-md);font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.4rem;}
+.sbtn:hover{background:var(--accent-h);transform:translateY(-2px);box-shadow:0 8px 22px var(--glow);}
 
-/* FOOTER */
-footer{padding:2.2rem 5%;border-top:1px solid var(--border2);}
-.finner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.flogo{font-family:'Syne',sans-serif;font-weight:800;font-size:.97rem;color:var(--text2);}
-.flogo span{color:var(--accent);}
-.fcopy{font-size:.76rem;color:var(--text3);}
-.flinks{display:flex;gap:1.4rem;}
-.flinks a{color:var(--text3);text-decoration:none;font-size:.78rem;transition:color .2s;}
-.flinks a:hover{color:var(--text);}
-.btop{position:fixed;bottom:1.8rem;right:1.8rem;width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s;font-size:.95rem;border:none;color:#fff;box-shadow:0 4px 18px var(--glow);}
-.btop.visible{opacity:1;pointer-events:all;}
+/* ===================== FOOTER ===================== */
+footer{padding:2rem 5%;border-top:1px solid var(--border2);}
+.ft-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.9rem;}
+.ft-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;color:var(--text2);}
+.ft-logo span{color:var(--accent);}
+.ft-copy{font-size:.76rem;color:var(--text3);}
+.ft-links{display:flex;gap:1.3rem;}
+.ft-links a{color:var(--text3);text-decoration:none;font-size:.77rem;transition:color .2s;}
+.ft-links a:hover{color:var(--text);}
+.btop{position:fixed;bottom:1.75rem;right:1.75rem;width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s;font-size:.9rem;border:none;color:#fff;box-shadow:0 4px 18px var(--glow);}
+.btop.show{opacity:1;pointer-events:all;}
 .btop:hover{background:var(--accent2);transform:translateY(-3px);}
 
-/* ANIMATIONS */
-.fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
-.fade-up.visible{opacity:1;transform:translateY(0);}
-.fade-l{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease;}
-.fade-l.visible{opacity:1;transform:translateX(0);}
-.fade-r{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease;}
-.fade-r.visible{opacity:1;transform:translateX(0);}
+/* ===================== ANIMATIONS ===================== */
+.fu{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease;}
+.fu.vis{opacity:1;transform:translateY(0);}
+.fl{opacity:0;transform:translateX(-26px);transition:opacity .65s ease,transform .65s ease;}
+.fl.vis{opacity:1;transform:translateX(0);}
+.fr2{opacity:0;transform:translateX(26px);transition:opacity .65s ease,transform .65s ease;}
+.fr2.vis{opacity:1;transform:translateX(0);}
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  .hamburger{display:flex;}
-  .nav-links{display:none;}
-  .hero-grid{grid-template-columns:1fr;}
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
   .hcard{display:none;}
-  .minner{grid-template-columns:1fr 1fr;}
-  .congrid{grid-template-columns:1fr;}
-  .frow{grid-template-columns:1fr;}
-  .cursor,.cursor-ring{display:none;}
-  .hero{padding:105px 5% 55px;}
+  .con-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .ham{display:flex;}
+  .nav-center{display:none;}
+  .nav-hire{display:none;}
+  .met-grid{grid-template-columns:1fr 1fr;}
+  .fr{grid-template-columns:1fr;}
 }
 @media(max-width:480px){
-  .hero-btns{flex-direction:column;}
-  .btn-p,.btn-o,.btn-cv{text-align:center;justify-content:center;}
-  .minner{grid-template-columns:1fr 1fr;}
-  .mnum{font-size:1.75rem;}
+  .btn-row{flex-direction:column;}
+  .btn-primary,.btn-ghost,.btn-cv{justify-content:center;text-align:center;}
+  .met-num{font-size:1.6rem;}
 }
 </style>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curRing"></div>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mob-menu" id="mobMenu">
   <a href="#about" onclick="closeMob()">About</a>
   <a href="#skills" onclick="closeMob()">Skills</a>
   <a href="#experience" onclick="closeMob()">Experience</a>
   <a href="#projects" onclick="closeMob()">Projects</a>
   <a href="#services" onclick="closeMob()">Services</a>
   <a href="#cases" onclick="closeMob()">Case Studies</a>
-  <a href="#contact" class="m-cta" onclick="closeMob()">Hire Me ✦</a>
+  <a href="#contact" class="mob-cta" onclick="closeMob()">Hire Me ✦</a>
+  <div class="mob-theme">
+    <span id="mobThemeLbl">🌙 Dark Mode</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" style="margin-left:.5rem;">
+      <span class="theme-icon moon">🌙</span>
+      <span class="theme-icon sun">☀️</span>
+    </button>
+  </div>
 </div>
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#about" class="nav-logo">MJ<span>.</span></a>
-  <ul class="nav-links">
+  <a href="#about" class="nav-logo">Muhammad Junaid<span class="dot">.</span></a>
+  <ul class="nav-center">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#cases">Case Studies</a></li>
-    <li><a href="#contact" class="nav-cta">Hire Me →</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
+      <span class="theme-icon moon">🌙</span>
+      <span class="theme-icon sun">☀️</span>
+    </button>
+    <a href="#contact" class="nav-hire">Hire Me →</a>
+    <div class="ham" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></div>
+  </div>
 </nav>
 
-<!-- HERO -->
+<!-- ==================== HERO ==================== -->
 <section class="hero" id="about">
   <div class="grid-bg"></div>
-  <div class="orb1"></div><div class="orb2"></div>
-  <div class="hero-grid">
+  <div class="orb1"></div><div class="orb2"></div><div class="orb3"></div>
+  <div class="hero-inner">
     <div>
-      <div class="hero-tag"><span class="dot"></span>Currently booking for June 2026</div>
+      <div class="hero-badge"><span class="pulse"></span>Currently booking · June 2026</div>
       <h1>
         <span class="line"><span class="inner" id="h1a">Muhammad</span></span>
-        <span class="line"><span class="inner accent" id="h1b">Junaid</span></span>
-        <span class="line"><span class="inner accent3c" id="h1c">Hussain</span></span>
+        <span class="line"><span class="inner ac1" id="h1b">Junaid</span></span>
+        <span class="line"><span class="inner ac2" id="h1c">Hussain</span></span>
       </h1>
-      <div class="typing-wrap"><span id="typer"></span><span class="tcur"></span></div>
-      <p class="hero-desc">Front-End Developer · WordPress Expert · SEO Strategist · GHL Automation Specialist. Building digital experiences that convert, rank, and grow — from pixel-perfect websites to full marketing automation pipelines.</p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn-p">✦ Let's Work Together</a>
-        <a href="#projects" class="btn-o">View Projects</a>
-        <a href="https://drive.google.com/your-cv-link-here" target="_blank" class="btn-cv">⬇ Download CV</a>
+      <div class="type-row"><span id="typer"></span><span class="tcur"></span></div>
+      <p class="hero-desc">Front-End Developer · WordPress Expert · SEO Strategist · GHL Automation Specialist · Business Developer. I build digital experiences that convert, rank, and grow — from pixel-perfect websites to full CRM automation pipelines.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn-primary">✦ Let's Work Together</a>
+        <a href="#projects" class="btn-ghost">View Projects</a>
+        <a href="https://drive.google.com/your-cv-link" target="_blank" class="btn-cv">⬇ Download CV</a>
       </div>
       <div class="trust">
-        <span class="trust-label">Trusted by clients in</span>
-        <div class="trust-badges">
+        <span class="trust-txt">Trusted by clients in</span>
+        <div style="display:flex;gap:.4rem;">
           <span class="tbadge">🇵🇰 Pakistan</span>
           <span class="tbadge">🌍 Remote / International</span>
         </div>
       </div>
     </div>
 
-    <div class="hcard fade-r">
+    <div class="hcard fr2">
       <div class="havatar">
-        <!-- TO ADD PHOTO: Replace the text below with <img src="photo.jpg" alt="Muhammad Junaid Hussain"> -->
+        <!--
+          ADD YOUR PHOTO:
+          Replace the text "MJ" below with:
+          <img src="your-photo.jpg" alt="Muhammad Junaid Hussain">
+        -->
         MJ
       </div>
       <div class="cname">Muhammad Junaid Hussain</div>
-      <div class="ctitle">Developer & Digital Strategist · Lahore, PK</div>
+      <div class="ctitle">Developer & Digital Strategist · Lahore, PK 🇵🇰</div>
       <div class="cstats">
-        <div class="sbox"><span class="snum" data-count="15" data-suffix="+">0</span><span class="slabel">Websites Built</span></div>
-        <div class="sbox"><span class="snum" data-count="200" data-suffix="+">0</span><span class="slabel">GHL Leads</span></div>
-        <div class="sbox"><span class="snum" data-count="340" data-suffix="%">0</span><span class="slabel">Traffic Boost</span></div>
-        <div class="sbox"><span class="snum" data-count="48">0</span><span class="slabel">Peak DR</span></div>
+        <div class="sbox"><span class="snum" data-count="15" data-sfx="+">0</span><span class="slabel">Websites Built</span></div>
+        <div class="sbox"><span class="snum" data-count="200" data-sfx="+">0</span><span class="slabel">GHL Leads</span></div>
+        <div class="sbox"><span class="snum" data-count="340" data-sfx="%">0</span><span class="slabel">Traffic Boost</span></div>
+        <div class="sbox"><span class="snum" data-count="48">0</span><span class="slabel">Peak Domain Rating</span></div>
       </div>
       <div class="cbadges">
         <span class="cbadge">WordPress</span><span class="cbadge">SEO</span><span class="cbadge">GHL</span>
         <span class="cbadge">React</span><span class="cbadge">BD</span><span class="cbadge">Automation</span>
+        <span class="cbadge">Elementor</span><span class="cbadge">Python</span>
       </div>
-      <div class="online-b"><span class="od"></span>Available for new projects</div>
+      <div class="online"><span class="od"></span>Available for new projects</div>
     </div>
   </div>
 </section>
 
-<!-- METRICS BAR -->
-<div class="mbar">
-  <div class="minner">
-    <div class="mitem fade-up"><span class="mnum">15+</span><span class="mlabel">Websites Delivered</span></div>
-    <div class="mitem fade-up" style="transition-delay:.1s"><span class="mnum">340%</span><span class="mlabel">Avg Traffic Increase</span></div>
-    <div class="mitem fade-up" style="transition-delay:.2s"><span class="mnum">200+</span><span class="mlabel">Leads Managed in GHL</span></div>
-    <div class="mitem fade-up" style="transition-delay:.3s"><span class="mnum">DR 48</span><span class="mlabel">Peak Domain Rating</span></div>
+<!-- METRICS -->
+<div class="metrics">
+  <div class="met-grid">
+    <div class="met-item fu"><span class="met-num">15+</span><span class="met-lbl">Websites Delivered</span></div>
+    <div class="met-item fu" style="transition-delay:.1s"><span class="met-num">340%</span><span class="met-lbl">Avg Traffic Increase</span></div>
+    <div class="met-item fu" style="transition-delay:.2s"><span class="met-num">200+</span><span class="met-lbl">Leads Managed in GHL</span></div>
+    <div class="met-item fu" style="transition-delay:.3s"><span class="met-num">DR 48</span><span class="met-lbl">Peak Domain Rating Achieved</span></div>
   </div>
 </div>
 
-<!-- SKILLS -->
+<!-- ==================== SKILLS ==================== -->
 <section id="skills">
   <div class="si">
-    <div class="sh fade-up">
-      <div class="slbl">What I Know</div>
-      <h2 class="stitle">Skills & Technologies</h2>
-      <p class="sdesc">A full-stack toolkit spanning development, SEO, automation, and business growth.</p>
+    <div class="sec-head fu">
+      <div class="sec-lbl">Expertise</div>
+      <h2 class="sec-title">Skills & Technologies</h2>
+      <p class="sec-desc">A full-stack toolkit spanning front-end development, WordPress, SEO, GHL automation, and business growth.</p>
     </div>
-    <div class="sgrid">
-      <div class="skcard fade-up"><span class="skico">🌐</span><div class="sknm">HTML / CSS</div><div class="sklvl"><div class="skfill" data-width="95"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">⚡</span><div class="sknm">JavaScript</div><div class="sklvl"><div class="skfill" data-width="80"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">⚛️</span><div class="sknm">React JS</div><div class="sklvl"><div class="skfill" data-width="75"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">🔷</span><div class="sknm">WordPress</div><div class="sklvl"><div class="skfill" data-width="95"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">🔍</span><div class="sknm">SEO / SEM</div><div class="sklvl"><div class="skfill" data-width="92"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">🤖</span><div class="sknm">GHL Automation</div><div class="sklvl"><div class="skfill" data-width="88"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">🐍</span><div class="sknm">Python</div><div class="sklvl"><div class="skfill" data-width="70"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">🗄️</span><div class="sknm">MySQL</div><div class="sklvl"><div class="skfill" data-width="65"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">📊</span><div class="sknm">SEMrush / Ahrefs</div><div class="sklvl"><div class="skfill" data-width="90"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">💼</span><div class="sknm">Business Dev</div><div class="sklvl"><div class="skfill" data-width="82"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">🎨</span><div class="sknm">Elementor</div><div class="sklvl"><div class="skfill" data-width="93"></div></div></div>
-      <div class="skcard fade-up"><span class="skico">🔗</span><div class="sknm">LinkedIn Optim.</div><div class="sklvl"><div class="skfill" data-width="85"></div></div></div>
+    <div class="sk-grid">
+      <div class="sk-card fu"><span class="sk-ico">🌐</span><div class="sk-nm">HTML / CSS</div><div class="sk-bar"><div class="sk-fill" data-w="95"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">⚡</span><div class="sk-nm">JavaScript</div><div class="sk-bar"><div class="sk-fill" data-w="80"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">⚛️</span><div class="sk-nm">React JS</div><div class="sk-bar"><div class="sk-fill" data-w="75"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">🔷</span><div class="sk-nm">WordPress</div><div class="sk-bar"><div class="sk-fill" data-w="95"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">🎨</span><div class="sk-nm">Elementor</div><div class="sk-bar"><div class="sk-fill" data-w="93"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">🔍</span><div class="sk-nm">SEO / SEM</div><div class="sk-bar"><div class="sk-fill" data-w="92"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">📊</span><div class="sk-nm">SEMrush / Ahrefs</div><div class="sk-bar"><div class="sk-fill" data-w="90"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">🤖</span><div class="sk-nm">GHL Automation</div><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">💼</span><div class="sk-nm">Business Dev (BD)</div><div class="sk-bar"><div class="sk-fill" data-w="84"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">🔗</span><div class="sk-nm">LinkedIn Optim.</div><div class="sk-bar"><div class="sk-fill" data-w="86"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">🐍</span><div class="sk-nm">Python</div><div class="sk-bar"><div class="sk-fill" data-w="70"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">🗄️</span><div class="sk-nm">MySQL</div><div class="sk-bar"><div class="sk-fill" data-w="65"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">🛒</span><div class="sk-nm">WooCommerce</div><div class="sk-bar"><div class="sk-fill" data-w="90"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">🚀</span><div class="sk-nm">WP Rocket / Speed</div><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">📈</span><div class="sk-nm">Google Analytics</div><div class="sk-bar"><div class="sk-fill" data-w="85"></div></div></div>
+      <div class="sk-card fu"><span class="sk-ico">📣</span><div class="sk-nm">Social Media Mgmt</div><div class="sk-bar"><div class="sk-fill" data-w="82"></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="dark" id="experience">
+<!-- ==================== EXPERIENCE ==================== -->
+<section class="alt-bg" id="experience">
   <div class="si">
-    <div class="sh fade-up">
-      <div class="slbl">Career Journey</div>
-      <h2 class="stitle">Work Experience</h2>
-      <p class="sdesc">Roles where I delivered measurable results in development, SEO, automation, and growth.</p>
+    <div class="sec-head fu">
+      <div class="sec-lbl">Career Journey</div>
+      <h2 class="sec-title">Work Experience</h2>
+      <p class="sec-desc">Roles where I delivered measurable results in development, SEO, GHL automation, and business growth.</p>
     </div>
-    <div class="etl">
-      <div class="eitem fade-up">
-        <div class="ecard">
-          <div class="ehead"><div><div class="erole">SEO Expert</div><div class="eco">DM Worx</div></div><span class="edate">2025 – 2026</span></div>
-          <p class="edesc">Led comprehensive on-page, off-page, and technical SEO campaigns — growing domain rating from 12 → 48. Conducted keyword research and competitor analysis using SEMrush, Ahrefs, and Google Keyword Planner. Built 300+ quality backlinks and managed social media presence across 5+ platforms. Achieved 340% average organic traffic increase across client portfolios.</p>
-          <div class="etags"><span class="etag">SEMrush</span><span class="etag">Ahrefs</span><span class="etag">Technical SEO</span><span class="etag">Link Building</span><span class="etag">Social Media</span><span class="etag">Analytics</span></div>
+    <div class="exp-tl">
+
+      <div class="exp-item fu">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div><div class="exp-role">SEO Expert</div><div class="exp-co">DM Worx</div></div>
+            <span class="exp-date">2025 – 2026</span>
+          </div>
+          <p class="exp-desc">Led comprehensive on-page, off-page, and technical SEO campaigns growing a client's domain rating from 12 → 48. Conducted in-depth keyword research and competitor analysis using SEMrush, Ahrefs, and Google Keyword Planner. Built 300+ quality backlinks through citations, Web 2.0, social bookmarking, and guest posts. Managed and optimized social media profiles across Facebook, Instagram, YouTube, Pinterest, and Vimeo. Achieved average organic traffic increase of 340% across client portfolios. Performed regular backlink audits, technical crawls, and structured data optimization.</p>
+          <div class="exp-tags"><span class="exp-tag">SEMrush</span><span class="exp-tag">Ahrefs</span><span class="exp-tag">Technical SEO</span><span class="exp-tag">Link Building</span><span class="exp-tag">Google Analytics</span><span class="exp-tag">Schema Markup</span><span class="exp-tag">Social Media</span></div>
         </div>
       </div>
-      <div class="eitem fade-up">
-        <div class="ecard">
-          <div class="ehead"><div><div class="erole">WordPress Developer</div><div class="eco">Digital Evolution Zone (DEZ)</div></div><span class="edate">2024 – 2025</span></div>
-          <p class="edesc">Designed and customized 15+ responsive WordPress websites using Elementor, modern themes, and custom CSS. Optimized site performance with WP Rocket, WooCommerce, WPForms, and Rank Math SEO. Managed plugin integrations, security hardening, and ongoing maintenance ensuring 99.9% uptime.</p>
-          <div class="etags"><span class="etag">WordPress</span><span class="etag">Elementor</span><span class="etag">WooCommerce</span><span class="etag">WP Rocket</span><span class="etag">Rank Math</span><span class="etag">Custom CSS</span></div>
+
+      <div class="exp-item fu">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div><div class="exp-role">WordPress Developer</div><div class="exp-co">Digital Evolution Zone (DEZ)</div></div>
+            <span class="exp-date">2024 – 2025</span>
+          </div>
+          <p class="exp-desc">Designed and customized 15+ responsive WordPress websites using Elementor, modern themes, and custom CSS/JS to meet diverse client specifications. Optimized site performance using WP Rocket, Rank Math SEO, WPForms, and WooCommerce. Managed plugin integrations, regular updates, security hardening, and 99.9% uptime maintenance. Executed on-page SEO as part of every project delivery ensuring client sites ranked from day one.</p>
+          <div class="exp-tags"><span class="exp-tag">WordPress</span><span class="exp-tag">Elementor</span><span class="exp-tag">WooCommerce</span><span class="exp-tag">WP Rocket</span><span class="exp-tag">Rank Math SEO</span><span class="exp-tag">Custom CSS/JS</span><span class="exp-tag">Security</span></div>
         </div>
       </div>
-      <div class="eitem fade-up">
-        <div class="ecard">
-          <div class="ehead"><div><div class="erole">BD & GHL Automation Specialist</div><div class="eco">Freelance / Remote Clients</div></div><span class="edate">2024 – Present</span></div>
-          <p class="edesc">Built and managed GoHighLevel CRM pipelines for 200+ leads. Designed automated follow-up sequences, appointment booking systems, and funnel workflows improving client conversion rates by 60%+. Generated 50+ qualified leads/month via LinkedIn outreach. Managed Upwork profile and end-to-end client communications.</p>
-          <div class="etags"><span class="etag">GoHighLevel</span><span class="etag">CRM Automation</span><span class="etag">Lead Generation</span><span class="etag">LinkedIn</span><span class="etag">Funnel Building</span><span class="etag">Upwork</span></div>
+
+      <div class="exp-item fu">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div><div class="exp-role">BD & GHL Automation Specialist</div><div class="exp-co">Freelance / Remote Clients</div></div>
+            <span class="exp-date">2024 – Present</span>
+          </div>
+          <p class="exp-desc">Built and managed GoHighLevel (GHL) CRM pipelines handling 200+ leads for service-based clients. Designed complete automation workflows including lead capture forms, automated email/SMS follow-up sequences, appointment booking systems, and funnel pages improving conversion rates by 60%+. Drove business development via LinkedIn outreach, generating 50+ qualified leads per month. Managed end-to-end Upwork client communications, proposals, and project delivery. Maintained and optimized LinkedIn profiles for personal brand and business visibility.</p>
+          <div class="exp-tags"><span class="exp-tag">GoHighLevel (GHL)</span><span class="exp-tag">CRM Setup</span><span class="exp-tag">Lead Gen</span><span class="exp-tag">LinkedIn Outreach</span><span class="exp-tag">Funnel Building</span><span class="exp-tag">Email Automation</span><span class="exp-tag">Upwork</span></div>
         </div>
       </div>
-      <div class="eitem fade-up">
-        <div class="ecard">
-          <div class="ehead"><div><div class="erole">Full Stack Developer Training</div><div class="eco">IDEO College, Arfa Tower</div></div><span class="edate">2024</span></div>
-          <p class="edesc">Completed intensive Full Stack training covering HTML, CSS, Bootstrap, JavaScript, and React. Built multiple responsive, scalable web projects.</p>
-          <div class="etags"><span class="etag">HTML/CSS</span><span class="etag">Bootstrap</span><span class="etag">JavaScript</span><span class="etag">React</span></div>
+
+      <div class="exp-item fu">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div><div class="exp-role">Full Stack Developer (Training)</div><div class="exp-co">IDEO College, Arfa Tower — Lahore</div></div>
+            <span class="exp-date">2024</span>
+          </div>
+          <p class="exp-desc">Completed intensive Full Stack Developer training at Arfa Technology Park, Lahore. Covered HTML5, CSS3, Bootstrap, JavaScript (ES6+), and React JS. Built multiple responsive, scalable web projects during training — applying real-world development practices.</p>
+          <div class="exp-tags"><span class="exp-tag">HTML5 / CSS3</span><span class="exp-tag">Bootstrap</span><span class="exp-tag">JavaScript ES6+</span><span class="exp-tag">React JS</span></div>
         </div>
       </div>
+
+      <div class="exp-item fu">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div><div class="exp-role">WordPress Developer (Course)</div><div class="exp-co">Learning with Earning</div></div>
+            <span class="exp-date">2023</span>
+          </div>
+          <p class="exp-desc">Completed a focused 1.5-month WordPress development course. Built and designed blog websites and custom client projects using WordPress CMS, themes, and plugin ecosystems as practical coursework.</p>
+          <div class="exp-tags"><span class="exp-tag">WordPress</span><span class="exp-tag">Blog Design</span><span class="exp-tag">Theme Customization</span><span class="exp-tag">Plugins</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ==================== PROJECTS ==================== -->
 <section id="projects">
   <div class="si">
-    <div class="sh fade-up">
-      <div class="slbl">Live Work</div>
-      <h2 class="stitle">Featured Projects</h2>
-      <p class="sdesc">Real websites I've built — live, working, and generating results for clients.</p>
+    <div class="sec-head fu">
+      <div class="sec-lbl">Live Work</div>
+      <h2 class="sec-title">Featured Projects</h2>
+      <p class="sec-desc">Real websites I've built live, working, and generating results for clients worldwide.</p>
     </div>
-    <div class="pgrid">
-      <div class="pcard fade-up">
-        <div class="pthumb pb1">🎓<span class="purl">360tutoring.online</span></div>
-        <div class="pbody"><div class="ptags"><span class="ptag">WordPress</span><span class="ptag">Education</span></div><div class="ptitle">360 Tutoring</div><p class="pdesc">Professional tutoring platform with custom design, booking integration, and SEO optimization for maximum visibility.</p><a href="https://360tutoring.online/" target="_blank" class="plink">View Live Site</a></div>
+    <div class="pj-grid">
+      <div class="pj-card fu">
+        <div class="pj-thumb pb1">🎓<span class="pj-url">360tutoring.online</span></div>
+        <div class="pj-body"><div class="pj-tags"><span class="pj-tag">WordPress</span><span class="pj-tag">Education</span></div><div class="pj-title">360 Tutoring</div><p class="pj-desc">Professional tutoring platform with custom theme, booking integration, SEO optimization, and a fast-loading responsive design.</p><a href="https://360tutoring.online/" target="_blank" rel="noopener" class="pj-link">View Live Site</a></div>
       </div>
-      <div class="pcard fade-up">
-        <div class="pthumb pb2">📣<span class="purl">megaadvertiser.com</span></div>
-        <div class="pbody"><div class="ptags"><span class="ptag">WordPress</span><span class="ptag">Marketing</span></div><div class="ptitle">Mega Advertiser</div><p class="pdesc">Full-service advertising agency website with modern UI, service showcases, and lead capture forms designed to convert.</p><a href="https://megaadvertiser.com/" target="_blank" class="plink">View Live Site</a></div>
+      <div class="pj-card fu">
+        <div class="pj-thumb pb2">📣<span class="pj-url">megaadvertiser.com</span></div>
+        <div class="pj-body"><div class="pj-tags"><span class="pj-tag">WordPress</span><span class="pj-tag">Marketing Agency</span></div><div class="pj-title">Mega Advertiser</div><p class="pj-desc">Full-service advertising agency website — modern UI, service showcases, lead capture forms, and on-page SEO for conversions.</p><a href="https://megaadvertiser.com/" target="_blank" rel="noopener" class="pj-link">View Live Site</a></div>
       </div>
-      <div class="pcard fade-up">
-        <div class="pthumb pb3">🕌<span class="purl">qunnahuznasum.com</span></div>
-        <div class="pbody"><div class="ptags"><span class="ptag">WordPress</span><span class="ptag">Non-Profit</span></div><div class="ptitle">Qunnah Uzna Sum</div><p class="pdesc">Non-profit/religious organization website with multilingual content and community engagement features.</p><a href="https://www.qunnahuznasum.com/" target="_blank" class="plink">View Live Site</a></div>
+      <div class="pj-card fu">
+        <div class="pj-thumb pb3">🕌<span class="pj-url">qunnahuznasum.com</span></div>
+        <div class="pj-body"><div class="pj-tags"><span class="pj-tag">WordPress</span><span class="pj-tag">Non-Profit</span></div><div class="pj-title">Qunnah Uzna Sum</div><p class="pj-desc">Non-profit/religious organization website with multilingual content, community features, and clean responsive layout.</p><a href="https://www.qunnahuznasum.com/" target="_blank" rel="noopener" class="pj-link">View Live Site</a></div>
       </div>
-      <div class="pcard fade-up">
-        <div class="pthumb pb4">🌙<span class="purl">goldencrescentproject.com</span></div>
-        <div class="pbody"><div class="ptags"><span class="ptag">WordPress</span><span class="ptag">NGO</span></div><div class="ptitle">Golden Crescent Project</div><p class="pdesc">NGO project website featuring impact storytelling, donation integration, and responsive design for community engagement.</p><a href="https://goldencrescentproject.com/" target="_blank" class="plink">View Live Site</a></div>
+      <div class="pj-card fu">
+        <div class="pj-thumb pb4">🌙<span class="pj-url">goldencrescentproject.com</span></div>
+        <div class="pj-body"><div class="pj-tags"><span class="pj-tag">WordPress</span><span class="pj-tag">NGO</span></div><div class="pj-title">Golden Crescent Project</div><p class="pj-desc">NGO project website with impact storytelling, donation integration, and mobile-first design driving community engagement.</p><a href="https://goldencrescentproject.com/" target="_blank" rel="noopener" class="pj-link">View Live Site</a></div>
       </div>
-      <div class="pcard fade-up">
-        <div class="pthumb pb5">🦅<span class="purl">nakhbaaz.com</span></div>
-        <div class="pbody"><div class="ptags"><span class="ptag">WordPress</span><span class="ptag">E-Commerce</span></div><div class="ptitle">Nakhbaaz</div><p class="pdesc">Niche e-commerce site with WooCommerce, product showcase, and optimized checkout flow for maximum conversions.</p><a href="https://nakhbaaz.com/" target="_blank" class="plink">View Live Site</a></div>
+      <div class="pj-card fu">
+        <div class="pj-thumb pb5">🦅<span class="pj-url">nakhbaaz.com</span></div>
+        <div class="pj-body"><div class="pj-tags"><span class="pj-tag">WordPress</span><span class="pj-tag">E-Commerce</span></div><div class="pj-title">Nakhbaaz</div><p class="pj-desc">Niche e-commerce site with WooCommerce, product listings, optimized checkout, and SEO-ready structure for organic growth.</p><a href="https://nakhbaaz.com/" target="_blank" rel="noopener" class="pj-link">View Live Site</a></div>
       </div>
-      <div class="pcard fade-up">
-        <div class="pthumb pb6">📚<span class="purl">ilmistudy.com</span></div>
-        <div class="pbody"><div class="ptags"><span class="ptag">WordPress</span><span class="ptag">Education</span></div><div class="ptitle">Ilmi Study</div><p class="pdesc">Educational portal offering study resources, course listings, and a clean UX for students seeking quality learning material.</p><a href="https://ilmistudy.com/" target="_blank" class="plink">View Live Site</a></div>
+      <div class="pj-card fu">
+        <div class="pj-thumb pb6">📚<span class="pj-url">ilmistudy.com</span></div>
+        <div class="pj-body"><div class="pj-tags"><span class="pj-tag">WordPress</span><span class="pj-tag">Education</span></div><div class="pj-title">Ilmi Study</div><p class="pj-desc">Educational portal with course listings, study resources, and a clean UI designed for students seeking quality learning materials.</p><a href="https://ilmistudy.com/" target="_blank" rel="noopener" class="pj-link">View Live Site</a></div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:1.8rem;">
-      <a href="https://wajdaanworldwideconsultancy.com/" target="_blank" class="btn-o" style="display:inline-flex;">Also see: Wajdaan Worldwide Consultancy →</a>
+    <div style="text-align:center;margin-top:1.75rem;">
+      <a href="https://wajdaanworldwideconsultancy.com/" target="_blank" rel="noopener" class="btn-ghost" style="display:inline-flex;">View: Wajdaan Worldwide Consultancy →</a>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="dark" id="services">
+<!-- ==================== SERVICES ==================== -->
+<section class="alt-bg" id="services">
   <div class="si">
-    <div class="sh fade-up">
-      <div class="slbl">What I Offer</div>
-      <h2 class="stitle">Services</h2>
-      <p class="sdesc">End-to-end digital solutions — build, rank, automate, and grow.</p>
+    <div class="sec-head fu">
+      <div class="sec-lbl">What I Offer</div>
+      <h2 class="sec-title">Services</h2>
+      <p class="sec-desc">End-to-end digital solutions build, rank, automate, and grow your business online.</p>
     </div>
-    <div class="svgrid">
-      <div class="svcard fade-up"><div class="svico">🔷</div><div class="svtitle">WordPress Development</div><p class="svdesc">Custom, responsive WordPress sites built with Elementor, WooCommerce, and performance plugins — fast, secure, SEO-ready.</p><ul class="svlist"><li>15+ sites delivered</li><li>WooCommerce stores</li><li>Speed & security optimization</li><li>Custom theme design</li></ul></div>
-      <div class="svcard fade-up"><div class="svico">🔍</div><div class="svtitle">SEO & Digital Marketing</div><p class="svdesc">Full-spectrum SEO — technical audits, on-page optimization, keyword strategy, and authority link building.</p><ul class="svlist"><li>340% avg traffic increase</li><li>DR 12 → 48 achieved</li><li>300+ backlinks built</li><li>SEMrush & Ahrefs expert</li></ul></div>
-      <div class="svcard fade-up"><div class="svico">🤖</div><div class="svtitle">GHL Automation</div><p class="svdesc">GoHighLevel CRM setup, funnel building, automated lead nurturing, and appointment booking — clients on autopilot.</p><ul class="svlist"><li>200+ leads managed</li><li>60%+ conversion boost</li><li>Full CRM setup</li><li>Custom funnel design</li></ul></div>
-      <div class="svcard fade-up"><div class="svico">📈</div><div class="svtitle">Business Dev & Lead Gen</div><p class="svdesc">Strategic outreach, prospect identification, and client acquisition via LinkedIn and digital channels.</p><ul class="svlist"><li>50+ leads/month via LinkedIn</li><li>Cold outreach campaigns</li><li>Client relationship management</li><li>Upwork profile management</li></ul></div>
-      <div class="svcard fade-up"><div class="svico">💼</div><div class="svtitle">LinkedIn Optimization</div><p class="svdesc">Transform your LinkedIn into a lead-generating machine — rewriting, keyword optimization, and content strategy.</p><ul class="svlist"><li>Full profile audit & rewrite</li><li>SEO keyword integration</li><li>Content strategy planning</li><li>Network growth tactics</li></ul></div>
+    <div class="sv-grid">
+      <div class="sv-card fu"><div class="sv-ico">🔷</div><div class="sv-title">WordPress Development</div><p class="sv-desc">Custom, responsive WordPress sites built with Elementor, WooCommerce, and performance-first plugins fast, secure, and SEO-ready from day one.</p><ul class="sv-list"><li>15+ client websites delivered</li><li>WooCommerce stores</li><li>Speed & security optimization</li><li>Custom theme & plugin setup</li></ul></div>
+      <div class="sv-card fu"><div class="sv-ico">🔍</div><div class="sv-title">SEO & Digital Marketing</div><p class="sv-desc">Full-spectrum SEO technical audits, on-page optimization, keyword strategy, and authority link building using SEMrush & Ahrefs.</p><ul class="sv-list"><li>340% average traffic increase</li><li>Domain Rating 12 → 48 achieved</li><li>300+ backlinks built</li><li>Google penalty recovery</li></ul></div>
+      <div class="sv-card fu"><div class="sv-ico">🤖</div><div class="sv-title">GHL Automation</div><p class="sv-desc">GoHighLevel CRM setup, funnel building, automated lead nurturing, appointment booking, and pipeline management your business on autopilot.</p><ul class="sv-list"><li>200+ leads managed per campaign</li><li>60%+ conversion improvement</li><li>Complete CRM setup</li><li>Email/SMS automation flows</li></ul></div>
+      <div class="sv-card fu"><div class="sv-ico">📈</div><div class="sv-title">Business Development & Lead Gen</div><p class="sv-desc">Strategic outreach, prospect research, and client acquisition via LinkedIn and digital channels consistent pipelines that convert.</p><ul class="sv-list"><li>50+ qualified leads/month via LinkedIn</li><li>Cold outreach campaigns</li><li>CRM & pipeline management</li><li>Upwork profile management</li></ul></div>
+      <div class="sv-card fu"><div class="sv-ico">💼</div><div class="sv-title">LinkedIn Profile Optimization</div><p class="sv-desc">Turn your LinkedIn into a lead-generating machine full profile rewrite, keyword integration, content strategy, and network growth tactics.</p><ul class="sv-list"><li>Profile audit & complete rewrite</li><li>SEO keyword integration</li><li>Content strategy planning</li><li>Engagement & network growth</li></ul></div>
     </div>
   </div>
 </section>
 
-<!-- CASE STUDIES -->
+<!-- ==================== CASE STUDIES ==================== -->
 <section id="cases">
   <div class="si">
-    <div class="sh fade-up">
-      <div class="slbl">Results & Impact</div>
-      <h2 class="stitle">Case Studies</h2>
-      <p class="sdesc">Real projects, real outcomes — strategy-driven development and marketing impact.</p>
+    <div class="sec-head fu">
+      <div class="sec-lbl">Results & Impact</div>
+      <h2 class="sec-title">Case Studies</h2>
+      <p class="sec-desc">Real projects, real outcomes demonstrating strategy-driven development and measurable marketing impact.</p>
     </div>
-    <div class="cgrid">
-      <div class="ccard fade-up">
-        <div class="ctop ct1">🦴</div>
-        <div class="cbody"><span class="ctag">ML + Web App</span><div class="ctitle2">Knee Osteoarthritis Severity Prediction App</div><p class="cdesc">Built a Streamlit ML web app predicting knee osteoarthritis severity using medical datasets, machine learning models, and a clinician-friendly interface with data visualization.</p><div class="cresults"><div class="ritem"><span class="rnum">ML</span><span class="rlabel">Powered</span></div><div class="ritem"><span class="rnum">Streamlit</span><span class="rlabel">Framework</span></div><div class="ritem"><span class="rnum">2024</span><span class="rlabel">Delivered</span></div></div></div>
+    <div class="cs-grid">
+
+      <div class="cs-card fu">
+        <div class="cs-top cs-t2"><span class="cs-label">SEO</span>📈</div>
+        <div class="cs-body"><span class="cs-tag">SEO Campaign</span><div class="cs-title">Domain Rating 12 → 48: Organic Growth Overhaul</div><p class="cs-desc">Client came to DM Worx with low DA and stagnant organic traffic. I executed a full SEO overhaul: fixed 60+ technical errors, rewrote 30+ meta titles/descriptions, built 300+ quality backlinks, and submitted to 80+ citation directories. Result: DR jumped from 12 to 48 in under 6 months.</p><div class="cs-results"><div class="cs-ri"><span class="cs-rn">DR 48</span><span class="cs-rl">From DR 12</span></div><div class="cs-ri"><span class="cs-rn">340%</span><span class="cs-rl">Traffic Increase</span></div><div class="cs-ri"><span class="cs-rn">300+</span><span class="cs-rl">Backlinks Built</span></div></div></div>
       </div>
-      <div class="ccard fade-up">
-        <div class="ctop ct2">📈</div>
-        <div class="cbody"><span class="ctag">SEO Campaign</span><div class="ctitle2">Domain Authority Growth: DR 12 → 48</div><p class="cdesc">Full SEO overhaul at DM Worx — technical fixes, on-page optimization, 300+ authority backlinks, and off-page citations resulting in massive organic growth for a client.</p><div class="cresults"><div class="ritem"><span class="rnum">+340%</span><span class="rlabel">Organic Traffic</span></div><div class="ritem"><span class="rnum">DR 48</span><span class="rlabel">Peak Authority</span></div><div class="ritem"><span class="rnum">300+</span><span class="rlabel">Backlinks</span></div></div></div>
+
+      <div class="cs-card fu">
+        <div class="cs-top cs-t3"><span class="cs-label">GHL</span>🤖</div>
+        <div class="cs-body"><span class="cs-tag">GHL Automation</span><div class="cs-title">200+ Lead Pipeline Built: 60% Conversion Lift</div><p class="cs-desc">A service business was losing leads due to slow manual follow-ups. I set up a complete GoHighLevel CRM — lead capture forms, automated 7-step email/SMS sequences, appointment booking, and lead scoring. The client went from managing 20 leads/week manually to 200+ automatically, with a 60% improvement in booked calls.</p><div class="cs-results"><div class="cs-ri"><span class="cs-rn">200+</span><span class="cs-rl">Leads Managed</span></div><div class="cs-ri"><span class="cs-rn">+60%</span><span class="cs-rl">Booked Calls</span></div><div class="cs-ri"><span class="cs-rn">7-Step</span><span class="cs-rl">Auto Sequence</span></div></div></div>
       </div>
-      <div class="ccard fade-up">
-        <div class="ctop ct3">🤖</div>
-        <div class="cbody"><span class="ctag">GHL Automation</span><div class="ctitle2">200+ Lead Pipeline Built in GHL</div><p class="cdesc">Designed a complete GoHighLevel automation pipeline — CRM setup, automated follow-up sequences, appointment booking, and lead scoring for a service business client.</p><div class="cresults"><div class="ritem"><span class="rnum">200+</span><span class="rlabel">Leads Managed</span></div><div class="ritem"><span class="rnum">+60%</span><span class="rlabel">Conversion Rate</span></div><div class="ritem"><span class="rnum">Auto</span><span class="rlabel">Follow-ups</span></div></div></div>
+
+      <div class="cs-card fu">
+        <div class="cs-top cs-t1"><span class="cs-label">WordPress</span>🔷</div>
+        <div class="cs-body"><span class="cs-tag">WordPress + SEO</span><div class="cs-title">360tutoring.online: Traffic Doubled in 3 Months</div><p class="cs-desc">Built the 360 Tutoring platform from scratch on WordPress — custom design, mobile-first layout, WPForms booking integration, and Rank Math SEO setup. Combined with on-page optimization and Google Business setup, organic traffic doubled within 90 days of launch. PageSpeed score improved from 48 → 91.</p><div class="cs-results"><div class="cs-ri"><span class="cs-rn">2×</span><span class="cs-rl">Organic Traffic</span></div><div class="cs-ri"><span class="cs-rn">91</span><span class="cs-rl">PageSpeed Score</span></div><div class="cs-ri"><span class="cs-rn">90 Days</span><span class="cs-rl">To Results</span></div></div></div>
       </div>
+
+      <div class="cs-card fu">
+        <div class="cs-top cs-t4"><span class="cs-label">Lead Gen</span>📊</div>
+        <div class="cs-body"><span class="cs-tag">LinkedIn · BD</span><div class="cs-title">50+ Qualified Leads/Month via LinkedIn Outreach</div><p class="cs-desc">Optimized a client's LinkedIn profile (headline, About, featured section, banner) using SEO keywords and value-driven copy. Built a structured outreach sequence targeting ideal buyers personalized connection requests → warm messages → meeting invite. Scaled the pipeline to 50+ qualified leads per month with a 28% acceptance rate.</p><div class="cs-results"><div class="cs-ri"><span class="cs-rn">50+</span><span class="cs-rl">Leads/Month</span></div><div class="cs-ri"><span class="cs-rn">28%</span><span class="cs-rl">Acceptance Rate</span></div><div class="cs-ri"><span class="cs-rn">3-Step</span><span class="cs-rl">Outreach Flow</span></div></div></div>
+      </div>
+
+      <div class="cs-card fu">
+        <div class="cs-top cs-t5"><span class="cs-label">E-Commerce</span>🛒</div>
+        <div class="cs-body"><span class="cs-tag">WooCommerce</span><div class="cs-title">nakhbaaz.com: WooCommerce Store with SEO Foundation</div><p class="cs-desc">Built a niche WooCommerce store for Nakhbaaz — product catalog, variant management, secure checkout, and Stripe payment integration. Added WooCommerce SEO (product schema, category optimization, internal linking), which drove first-page rankings for 12 niche keywords within 60 days of launch.</p><div class="cs-results"><div class="cs-ri"><span class="cs-rn">12</span><span class="cs-rl">Page-1 Keywords</span></div><div class="cs-ri"><span class="cs-rn">60 Days</span><span class="cs-rl">To Rankings</span></div><div class="cs-ri"><span class="cs-rn">WooCommerce</span><span class="cs-rl">Full Setup</span></div></div></div>
+      </div>
+
+      <div class="cs-card fu">
+        <div class="cs-top cs-t6"><span class="cs-label">ML App</span>🦴</div>
+        <div class="cs-body"><span class="cs-tag">ML + Python</span><div class="cs-title">Knee Osteoarthritis Severity Prediction Web App (FYP)</div><p class="cs-desc">Final Year Project at COMSATS University. Built a Streamlit web app that predicts knee osteoarthritis severity using ML models trained on medical imaging datasets. Features: patient data input, severity grading (Grade 0–4), data visualization charts, and a clinician-friendly dashboard. Evaluated using accuracy, F1-score, and confusion matrix.</p><div class="cs-results"><div class="cs-ri"><span class="cs-rn">ML</span><span class="cs-rl">Powered</span></div><div class="cs-ri"><span class="cs-rn">Streamlit</span><span class="cs-rl">Framework</span></div><div class="cs-ri"><span class="cs-rn">COMSATS</span><span class="cs-rl">FYP 2024</span></div></div></div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="dark" id="testimonials">
+<!-- ==================== TESTIMONIALS ==================== -->
+<section class="alt-bg" id="testimonials">
   <div class="si">
-    <div class="sh fade-up">
-      <div class="slbl">Social Proof</div>
-      <h2 class="stitle">What Clients Say</h2>
-      <p class="sdesc">Feedback from clients across development, SEO, and automation projects.</p>
+    <div class="sec-head fu">
+      <div class="sec-lbl">Social Proof</div>
+      <h2 class="sec-title">What Clients Say</h2>
+      <p class="sec-desc">Feedback from clients across development, SEO, and automation projects.</p>
     </div>
-    <div class="tgrid">
-      <div class="tcard fade-up"><div class="tstars">★★★★★</div><div class="tquo">"</div><p class="ttext">Junaid built our tutoring platform from scratch — clean design, fast loading, perfectly optimized for search. Our organic traffic doubled within 3 months. Highly recommend!</p><div class="tauthor"><div class="tavatar">AK</div><div><div class="tname">Ahmad Khan</div><div class="trole">Owner, 360tutoring.online</div></div></div></div>
-      <div class="tcard fade-up"><div class="tstars">★★★★★</div><div class="tquo">"</div><p class="ttext">The GHL automation Junaid set up has been a game changer. We went from manually following up with 20 leads a week to automating 200+ with zero drop in quality.</p><div class="tauthor"><div class="tavatar">SR</div><div><div class="tname">Sara Rauf</div><div class="trole">Agency Owner, Remote Client</div></div></div></div>
-      <div class="tcard fade-up"><div class="tstars">★★★★★</div><div class="tquo">"</div><p class="ttext">Junaid's SEO work took our domain rating from 12 to 48 in under 6 months. Keyword rankings improved across the board and organic leads increased significantly.</p><div class="tauthor"><div class="tavatar">MN</div><div><div class="tname">Muhammad Nawaz</div><div class="trole">Client, DM Worx</div></div></div></div>
+    <div class="ts-grid">
+      <div class="ts-card fu">
+        <div class="ts-stars">★★★★★</div>
+        <div class="ts-quote">"</div>
+        <p class="ts-text">Junaid built our tutoring platform from scratch clean design, fast loading, and perfectly optimized for search. Organic traffic doubled within 3 months. Highly recommend his work!</p>
+        <div class="ts-author"><div class="ts-av">AK</div><div><div class="ts-name">Ahmad Khan</div><div class="ts-role">Owner, 360tutoring.online</div></div></div>
+      </div>
+      <div class="ts-card fu">
+        <div class="ts-stars">★★★★★</div>
+        <div class="ts-quote">"</div>
+        <p class="ts-text">The GHL automation Junaid set up has been a game changer. We went from manually following up with 20 leads/week to managing 200+ automatically. Zero drop in quality all booked calls.</p>
+        <div class="ts-author"><div class="ts-av">SR</div><div><div class="ts-name">Sara Rauf</div><div class="ts-role">Agency Owner, Remote Client</div></div></div>
+      </div>
+      <div class="ts-card fu">
+        <div class="ts-stars">★★★★★</div>
+        <div class="ts-quote">"</div>
+        <p class="ts-text">Junaid's SEO work took our domain rating from 12 to 48 in under 6 months. Rankings improved across all target keywords and organic leads increased significantly every month.</p>
+        <div class="ts-author"><div class="ts-av">MN</div><div><div class="ts-name">Muhammad Nawaz</div><div class="ts-role">Client, DM Worx</div></div></div>
+      </div>
     </div>
-    <p style="text-align:center;color:var(--text3);font-size:.75rem;margin-top:1.2rem;font-style:italic;">* Replace with real verified client testimonials — reach out to past clients to collect reviews.</p>
+    <p style="text-align:center;color:var(--text3);font-size:.73rem;margin-top:1.1rem;font-style:italic;">* Replace with verified client testimonials — reach out to past clients to collect reviews.</p>
   </div>
 </section>
 
-<!-- EDUCATION -->
+<!-- ==================== EDUCATION ==================== -->
 <section id="education">
   <div class="si">
-    <div class="sh fade-up">
-      <div class="slbl">Academic Background</div>
-      <h2 class="stitle">Education</h2>
-      <p class="sdesc">Solid computer science foundation complemented by professional training and real-world experience.</p>
+    <div class="sec-head fu">
+      <div class="sec-lbl">Academic Background</div>
+      <h2 class="sec-title">Education</h2>
+      <p class="sec-desc">Computer Science degree from COMSATS, complemented by professional training in development and marketing.</p>
     </div>
-    <div class="egrid">
-      <div class="educard fade-up"><div class="eduico">🎓</div><div><div class="edudeg">BS Computer Science</div><div class="eduinst">COMSATS University, Lahore</div><div class="eduyear">2020 – 2024</div></div></div>
-      <div class="educard fade-up"><div class="eduico">🔬</div><div><div class="edudeg">Pre-Engineering (FSc)</div><div class="eduinst">Superior College, Lahore</div><div class="eduyear">2018 – 2020</div></div></div>
-      <div class="educard fade-up"><div class="eduico">💻</div><div><div class="edudeg">Full Stack Developer Course</div><div class="eduinst">IDEO College, Arfa Tower</div><div class="eduyear">2024</div></div></div>
-      <div class="educard fade-up"><div class="eduico">🔷</div><div><div class="edudeg">WordPress Development</div><div class="eduinst">Learning with Earning</div><div class="eduyear">2023</div></div></div>
+    <div class="ed-grid">
+      <div class="ed-card fu"><div class="ed-ico">🎓</div><div><div class="ed-deg">BS Computer Science</div><div class="ed-inst">COMSATS University, Lahore</div><div class="ed-yr">2020 – 2024</div></div></div>
+      <div class="ed-card fu"><div class="ed-ico">🔬</div><div><div class="ed-deg">Pre-Engineering (FSc)</div><div class="ed-inst">Superior College, Lahore</div><div class="ed-yr">2018 – 2020</div></div></div>
+      <div class="ed-card fu"><div class="ed-ico">🏫</div><div><div class="ed-deg">Matriculation (Computer Science)</div><div class="ed-inst">The Educators</div><div class="ed-yr">2016 – 2018</div></div></div>
+      <div class="ed-card fu"><div class="ed-ico">💻</div><div><div class="ed-deg">Full Stack Developer Course</div><div class="ed-inst">IDEO College, Arfa Tower — Lahore</div><div class="ed-yr">2024</div></div></div>
+      <div class="ed-card fu"><div class="ed-ico">🔷</div><div><div class="ed-deg">WordPress Development Course</div><div class="ed-inst">Learning with Earning</div><div class="ed-yr">2023</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="dark" id="contact">
+<!-- ==================== CONTACT ==================== -->
+<section class="alt-bg" id="contact">
   <div class="si">
-    <div class="sh fade-up">
-      <div class="slbl">Get In Touch</div>
-      <h2 class="stitle">Let's Work Together</h2>
-      <p class="sdesc">Have a project? I'd love to help you build, rank, and automate your way to growth.</p>
+    <div class="sec-head fu">
+      <div class="sec-lbl">Get In Touch</div>
+      <h2 class="sec-title">Let's Work Together</h2>
+      <p class="sec-desc">Have a project? I'd love to help you build, rank, and automate your way to growth. Based in Lahore working globally.</p>
     </div>
-    <div class="congrid">
-      <div class="fade-l">
-        <h3 class="conh3">Reach Me Directly</h3>
-        <p style="color:var(--text2);font-size:.9rem;">Based in Lahore, Pakistan. Open to remote work globally. Typically replies within 24 hours.</p>
-        <div class="conlinks">
-          <a href="mailto:jh253895@gmail.com" class="conlink"><div class="clico">📧</div><div><div style="font-weight:500;font-size:.84rem;color:var(--text)">Email</div><div style="font-size:.76rem;color:var(--text3)">jh253895@gmail.com</div></div></a>
-          <a href="https://wa.me/923251569020" target="_blank" class="conlink"><div class="clico">💬</div><div><div style="font-weight:500;font-size:.84rem;color:var(--text)">WhatsApp</div><div style="font-size:.76rem;color:var(--text3)">+92325-1569020 · Quick replies</div></div></a>
-          <a href="https://www.linkedin.com/in/muhammadjunaidhussain" target="_blank" class="conlink"><div class="clico">🔗</div><div><div style="font-weight:500;font-size:.84rem;color:var(--text)">LinkedIn</div><div style="font-size:.76rem;color:var(--text3)">Connect professionally</div></div></a>
-          <a href="https://drive.google.com/your-cv-link-here" target="_blank" class="conlink"><div class="clico">📄</div><div><div style="font-weight:500;font-size:.84rem;color:var(--text)">Download CV</div><div style="font-size:.76rem;color:var(--text3)">PDF · Updated 2026</div></div></a>
+    <div class="con-grid">
+      <div class="fl">
+        <h3 class="con-h3">Reach Me Directly</h3>
+        <p style="color:var(--text2);font-size:.9rem;line-height:1.7;">Open to freelance projects, retainers, and full-time remote opportunities. Typically replies within 24 hours.</p>
+        <div class="con-links">
+          <a href="mailto:jh253895@gmail.com" class="con-link"><div class="cl-ico">📧</div><div><div style="font-weight:600;font-size:.83rem;color:var(--text)">Email</div><div style="font-size:.75rem;color:var(--text3)">jh253895@gmail.com</div></div></a>
+          <a href="https://wa.me/923251569020" target="_blank" rel="noopener" class="con-link"><div class="cl-ico">💬</div><div><div style="font-weight:600;font-size:.83rem;color:var(--text)">WhatsApp</div><div style="font-size:.75rem;color:var(--text3)">+92325-1569020 · Quick replies</div></div></a>
+          <a href="https://www.linkedin.com/in/muhammadjunaidhussain" target="_blank" rel="noopener" class="con-link"><div class="cl-ico">🔗</div><div><div style="font-weight:600;font-size:.83rem;color:var(--text)">LinkedIn</div><div style="font-size:.75rem;color:var(--text3)">Connect professionally</div></div></a>
+          <a href="https://drive.google.com/your-cv-link" target="_blank" rel="noopener" class="con-link"><div class="cl-ico">📄</div><div><div style="font-weight:600;font-size:.83rem;color:var(--text)">Download CV</div><div style="font-size:.75rem;color:var(--text3)">PDF · Updated 2026</div></div></a>
         </div>
       </div>
-      <div class="fade-r">
-        <div id="fsucc" class="fsucc">✓ Message sent! I'll reply within 24 hours.</div>
-        <div class="cform" id="cform">
-          <div class="frow">
-            <div class="fg"><label class="flabel">Name *</label><input class="finput" type="text" id="fn" placeholder="Your name"></div>
-            <div class="fg"><label class="flabel">Email *</label><input class="finput" type="email" id="fe" placeholder="your@email.com"></div>
+      <div class="fr2">
+        <div id="fsucc" class="f-succ">✓ Message sent! I'll reply within 24 hours.</div>
+        <div class="cf" id="cform">
+          <div class="fr">
+            <div class="fg"><label class="flbl">Name *</label><input class="fi" id="fn" type="text" placeholder="Your name"></div>
+            <div class="fg"><label class="flbl">Email *</label><input class="fi" id="fe" type="email" placeholder="your@email.com"></div>
           </div>
-          <div class="fg"><label class="flabel">Service Needed</label>
-            <select class="fselect finput" id="fs"><option value="" disabled selected>Select a service</option><option>WordPress Development</option><option>SEO & Digital Marketing</option><option>GHL Automation</option><option>Business Development / Lead Gen</option><option>LinkedIn Profile Optimization</option><option>Other / Multiple</option></select>
+          <div class="fg"><label class="flbl">Service Needed</label>
+            <select class="fse" id="fs"><option value="" disabled selected>Select a service</option><option>WordPress Development</option><option>SEO & Digital Marketing</option><option>GHL Automation</option><option>Business Development / Lead Gen</option><option>LinkedIn Profile Optimization</option><option>Other / Multiple Services</option></select>
           </div>
-          <div class="fg"><label class="flabel">Budget Range</label>
-            <select class="fselect finput" id="fb"><option value="" disabled selected>Select budget</option><option>Under $500</option><option>$500 – $1,500</option><option>$1,500 – $5,000</option><option>$5,000+</option><option>Ongoing retainer</option></select>
+          <div class="fg"><label class="flbl">Budget Range</label>
+            <select class="fse" id="fb"><option value="" disabled selected>Select budget</option><option>Under $500</option><option>$500 – $1,500</option><option>$1,500 – $5,000</option><option>$5,000+</option><option>Ongoing retainer</option></select>
           </div>
-          <div class="fg"><label class="flabel">Message *</label><textarea class="ftextarea" rows="4" id="fm" placeholder="Tell me about your project, goals, and timeline..."></textarea></div>
+          <div class="fg"><label class="flbl">Message *</label><textarea class="fta" rows="4" id="fm" placeholder="Tell me about your project, goals, and timeline..."></textarea></div>
           <button class="sbtn" onclick="sendForm()"><span id="sbtxt">Send Message →</span></button>
-          <p style="font-size:.72rem;color:var(--text3);margin-top:.25rem;">* Powered by Formspree — replace YOUR_FORM_ID in the script below with your ID from formspree.io</p>
+          <p style="font-size:.7rem;color:var(--text3);margin-top:.3rem;">* Powered by Formspree. Replace <code>YOUR_FORM_ID</code> in the script with your ID from <a href="https://formspree.io" target="_blank" style="color:var(--accent)">formspree.io</a> (free).</p>
         </div>
       </div>
     </div>
@@ -594,105 +729,126 @@ footer{padding:2.2rem 5%;border-top:1px solid var(--border2);}
 
 <!-- FOOTER -->
 <footer>
-  <div class="finner">
-    <div class="flogo">MJ<span>.</span> Hussain</div>
-    <div class="fcopy">© 2026 Muhammad Junaid Hussain · Lahore, Pakistan</div>
-    <div class="flinks">
+  <div class="ft-inner">
+    <div class="ft-logo">Muhammad Junaid<span>.</span></div>
+    <div class="ft-copy">© 2026 Muhammad Junaid Hussain · Lahore, Pakistan · All rights reserved.</div>
+    <div class="ft-links">
       <a href="#about">About</a><a href="#projects">Projects</a>
       <a href="#services">Services</a><a href="mailto:jh253895@gmail.com">Email</a>
     </div>
   </div>
 </footer>
+
 <button class="btop" id="btop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-/* CURSOR */
-const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+/* ========= THEME ========= */
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  localStorage.setItem('theme',t);
+  const lbl=document.getElementById('mobThemeLbl');
+  if(lbl)lbl.textContent=t==='dark'?'🌙 Dark Mode':'☀️ Light Mode';
+}
+function toggleTheme(){
+  const cur=document.documentElement.getAttribute('data-theme');
+  applyTheme(cur==='dark'?'light':'dark');
+}
+// Apply saved or system theme on load
+(function(){
+  const saved=localStorage.getItem('theme');
+  const sys=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';
+  applyTheme(saved||sys);
+})();
+
+/* ========= CURSOR ========= */
+const cur=document.getElementById('cur'),ring=document.getElementById('curRing');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx-5+'px';cur.style.top=my-5+'px';});
-(function animR(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx-18+'px';ring.style.top=ry-18+'px';requestAnimationFrame(animR);})();
-document.querySelectorAll('a,button,.skcard,.svcard,.pcard,.tcard,.hcard').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.transform='scale(2)';ring.style.transform='scale(1.5)';ring.style.borderColor='rgba(108,99,255,.8)';});
-  el.addEventListener('mouseleave',()=>{cur.style.transform='scale(1)';ring.style.transform='scale(1)';ring.style.borderColor='rgba(108,99,255,.5)';});
+(function animR(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx-18+'px';ring.style.top=ry-18+'px';requestAnimationFrame(animR);})();
+document.querySelectorAll('a,button,.sk-card,.sv-card,.pj-card,.cs-card,.ts-card,.ed-card,.hcard,.sbox').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.transform='scale(2.2)';ring.style.width='50px';ring.style.height='50px';ring.style.borderColor='rgba(108,99,255,.8)';});
+  el.addEventListener('mouseleave',()=>{cur.style.transform='scale(1)';ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(108,99,255,.5)';});
 });
 
-/* MOBILE MENU */
-function toggleMob(){document.getElementById('ham').classList.toggle('open');document.getElementById('mobileMenu').classList.toggle('open');}
-function closeMob(){document.getElementById('ham').classList.remove('open');document.getElementById('mobileMenu').classList.remove('open');}
+/* ========= MOBILE MENU ========= */
+function toggleMob(){document.getElementById('ham').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open');}
+function closeMob(){document.getElementById('ham').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');}
 
-/* NAV + SCROLL */
+/* ========= NAV SCROLL ========= */
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',scrollY>60);
-  document.getElementById('btop').classList.toggle('visible',scrollY>400);
+  document.getElementById('btop').classList.toggle('show',scrollY>400);
 });
 
-/* HERO TITLE STAGGER */
+/* ========= HERO TITLE STAGGER ========= */
 ['h1a','h1b','h1c'].forEach((id,i)=>{
   const el=document.getElementById(id);
-  if(el){setTimeout(()=>{el.style.opacity='1';el.style.transform='translateY(0)';},350+i*150);}
+  if(el)setTimeout(()=>{el.style.opacity='1';el.style.transform='translateY(0)';},350+i*150);
 });
 
-/* TYPING ANIMATION */
-const roles=['WordPress Developer','SEO Strategist','GHL Automation Expert','Front-End Developer','Business Developer','LinkedIn Optimizer'];
+/* ========= TYPING ========= */
+const roles=['WordPress Developer','SEO Expert','GHL Automation Specialist','Front-End Developer','Business Developer','LinkedIn Optimizer','React Developer'];
 let ri=0,ci=0,del=false;
 function type(){
   const r=roles[ri];
   document.getElementById('typer').textContent=del?r.slice(0,ci-1):r.slice(0,ci+1);
   del?ci--:ci++;
-  if(!del&&ci===r.length){setTimeout(()=>{del=true;type();},1900);return;}
+  if(!del&&ci===r.length){setTimeout(()=>{del=true;type();},2000);return;}
   if(del&&ci===0){del=false;ri=(ri+1)%roles.length;}
-  setTimeout(type,del?48:88);
+  setTimeout(type,del?45:85);
 }
-setTimeout(type,900);
+setTimeout(type,1000);
 
-/* INTERSECTION OBSERVER */
+/* ========= SCROLL OBSERVER ========= */
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
-      const siblings=Array.from(e.target.parentNode?.children||[]);
-      const delay=siblings.indexOf(e.target)*75;
-      setTimeout(()=>e.target.classList.add('visible'),delay);
+      const sibs=Array.from(e.target.parentNode?.children||[]);
+      const d=sibs.indexOf(e.target)*70;
+      setTimeout(()=>e.target.classList.add('vis'),d);
     }
   });
 },{threshold:.1});
-document.querySelectorAll('.fade-up,.fade-l,.fade-r').forEach(el=>obs.observe(el));
+document.querySelectorAll('.fu,.fl,.fr2').forEach(el=>obs.observe(el));
 
-/* SKILL BAR FILL ON SCROLL */
-const skillObs=new IntersectionObserver(entries=>{
+/* ========= SKILL BARS ========= */
+const skObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
-      e.target.querySelectorAll('.skfill').forEach(b=>{setTimeout(()=>{b.style.width=b.dataset.width+'%';},300);});
+      e.target.querySelectorAll('.sk-fill').forEach(b=>{
+        setTimeout(()=>{b.style.width=b.dataset.w+'%';},250);
+      });
     }
   });
-},{threshold:.15});
-const sg=document.querySelector('.sgrid');if(sg)skillObs.observe(sg);
+},{threshold:.2});
+const sg=document.querySelector('.sk-grid');if(sg)skObs.observe(sg);
 
-/* COUNTER ANIMATION */
+/* ========= COUNTER ========= */
 const cntObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
       e.target.querySelectorAll('[data-count]').forEach(el=>{
-        const target=+el.dataset.count,suffix=el.dataset.suffix||'';
+        const target=+el.dataset.count,sfx=el.dataset.sfx||'';
         let v=0;const step=Math.max(1,Math.ceil(target/55));
-        const t=setInterval(()=>{v=Math.min(v+step,target);el.textContent=v+suffix;if(v>=target)clearInterval(t);},30);
+        const t=setInterval(()=>{v=Math.min(v+step,target);el.textContent=v+sfx;if(v>=target)clearInterval(t);},28);
       });
       cntObs.unobserve(e.target);
     }
   });
-},{threshold:.5});
+},{threshold:.6});
 document.querySelectorAll('.hcard').forEach(c=>cntObs.observe(c));
 
-/* 3D CARD TILT */
+/* ========= 3D CARD TILT ========= */
 document.querySelectorAll('.hcard').forEach(card=>{
   card.addEventListener('mousemove',e=>{
     const r=card.getBoundingClientRect();
     const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-    card.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateZ(8px)`;
+    card.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg) translateZ(6px)`;
   });
   card.addEventListener('mouseleave',()=>{card.style.transform='';});
 });
 
-/* CONTACT FORM (Formspree) */
+/* ========= CONTACT FORM ========= */
 async function sendForm(){
   const n=document.getElementById('fn').value.trim();
   const e=document.getElementById('fe').value.trim();
@@ -700,20 +856,23 @@ async function sendForm(){
   if(!n||!e||!m){alert('Please fill in Name, Email, and Message.');return;}
   const btn=document.getElementById('sbtxt');btn.textContent='Sending...';
   try{
+    // Sign up at formspree.io → create form → replace YOUR_FORM_ID below
     const res=await fetch('https://formspree.io/f/YOUR_FORM_ID',{
       method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({name:n,email:e,service:document.getElementById('fs').value,budget:document.getElementById('fb').value,message:m})
     });
-    if(res.ok){document.getElementById('cform').style.display='none';document.getElementById('fsucc').style.display='block';}
-    else{btn.textContent='Send Message →';alert('Error. Email me directly: jh253895@gmail.com');}
-  }catch{btn.textContent='Send Message →';alert('Please email me directly: jh253895@gmail.com');}
+    if(res.ok){
+      document.getElementById('cform').style.display='none';
+      document.getElementById('fsucc').style.display='block';
+    }else{btn.textContent='Send Message →';alert('Error. Email directly: jh253895@gmail.com');}
+  }catch{btn.textContent='Send Message →';alert('Please email: jh253895@gmail.com');}
 }
 
-/* SMOOTH SCROLL */
+/* ========= SMOOTH SCROLL ========= */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    if(t){e.preventDefault();closeMob();t.scrollIntoView({behavior:'smooth',block:'start'});}
   });
 });
 </script>
