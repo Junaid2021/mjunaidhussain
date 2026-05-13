@@ -89,6 +89,8 @@ nav.scrolled{padding:.75rem 5%;}
 .mob-menu a:hover{color:var(--accent);}
 .mob-cta{background:var(--accent);color:#fff!important;padding:.5rem 1.8rem;border-radius:8px;font-size:1.4rem!important;}
 .mob-theme{display:flex;align-items:center;gap:.7rem;color:var(--text2);font-size:.9rem;}
+/* Hide mob-theme row outside mobile menu (prevents bleed into desktop nav) */
+body > .mob-theme{display:none!important;}
 
 /* ===================== HERO ===================== */
 .hero{min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;position:relative;overflow:hidden;}
@@ -341,8 +343,8 @@ footer{padding:2rem 5%;border-top:1px solid var(--border2);}
   <a href="#cases" onclick="closeMob()">Case Studies</a>
   <a href="#contact" class="mob-cta" onclick="closeMob()">Hire Me ✦</a>
   <div class="mob-theme">
-    <span id="mobThemeLbl">🌙 Dark Mode</span>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" style="margin-left:.5rem;">
+    <span id="mobThemeLbl" style="font-size:.85rem;font-family:'Syne',sans-serif;font-weight:600;">🌙 Dark Mode</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
       <span class="theme-icon moon">🌙</span>
       <span class="theme-icon sun">☀️</span>
     </button>
@@ -384,11 +386,11 @@ footer{padding:2rem 5%;border-top:1px solid var(--border2);}
         <span class="line"><span class="inner ac2" id="h1c">Hussain</span></span>
       </h1>
       <div class="type-row"><span id="typer"></span><span class="tcur"></span></div>
-      <p class="hero-desc">Front-End Developer · WordPress Expert · SEO Strategist · GHL Automation Specialist · Business Developer. I build digital experiences that convert, rank, and grow — from pixel-perfect websites to full CRM automation pipelines.</p>
+      <p class="hero-desc">Front-End Developer · WordPress Expert · SEO Strategist · GHL Automation Specialist · Business Developer. I build digital experiences that convert, rank, and grow from pixel-perfect websites to full CRM automation pipelines.</p>
       <div class="btn-row">
         <a href="#contact" class="btn-primary">✦ Let's Work Together</a>
         <a href="#projects" class="btn-ghost">View Projects</a>
-        <a href="https://drive.google.com/your-cv-link" target="_blank" class="btn-cv">⬇ Download CV</a>
+        <a href="#contact" class="btn-cv">⬇ Download CV</a>
       </div>
       <div class="trust">
         <span class="trust-txt">Trusted by clients in</span>
@@ -511,10 +513,10 @@ footer{padding:2rem 5%;border-top:1px solid var(--border2);}
       <div class="exp-item fu">
         <div class="exp-card">
           <div class="exp-head">
-            <div><div class="exp-role">Full Stack Developer (Training)</div><div class="exp-co">IDEO College, Arfa Tower — Lahore</div></div>
+            <div><div class="exp-role">Full Stack Developer (Training)</div><div class="exp-co">IDEO College, Arfa Tower Lahore</div></div>
             <span class="exp-date">2024</span>
           </div>
-          <p class="exp-desc">Completed intensive Full Stack Developer training at Arfa Technology Park, Lahore. Covered HTML5, CSS3, Bootstrap, JavaScript (ES6+), and React JS. Built multiple responsive, scalable web projects during training — applying real-world development practices.</p>
+          <p class="exp-desc">Completed intensive Full Stack Developer training at Arfa Technology Park, Lahore. Covered HTML5, CSS3, Bootstrap, JavaScript (ES6+), and React JS. Built multiple responsive, scalable web projects during training applying real-world development practices.</p>
           <div class="exp-tags"><span class="exp-tag">HTML5 / CSS3</span><span class="exp-tag">Bootstrap</span><span class="exp-tag">JavaScript ES6+</span><span class="exp-tag">React JS</span></div>
         </div>
       </div>
@@ -569,7 +571,7 @@ footer{padding:2rem 5%;border-top:1px solid var(--border2);}
       </div>
     </div>
     <div style="text-align:center;margin-top:1.75rem;">
-      <a href="https://wajdaanworldwideconsultancy.com/" target="_blank" rel="noopener" class="btn-ghost" style="display:inline-flex;">View: Wajdaan Worldwide Consultancy →</a>
+      <a href="https://ilmistudy.com/" target="_blank" rel="noopener" class="btn-ghost" style="display:inline-flex;">View: Wajdaan Worldwide Consultancy →</a>
     </div>
   </div>
 </section>
@@ -619,7 +621,7 @@ footer{padding:2rem 5%;border-top:1px solid var(--border2);}
 
       <div class="cs-card fu">
         <div class="cs-top cs-t4"><span class="cs-label">Lead Gen</span>📊</div>
-        <div class="cs-body"><span class="cs-tag">LinkedIn · BD</span><div class="cs-title">50+ Qualified Leads/Month via LinkedIn Outreach</div><p class="cs-desc">Optimized a client's LinkedIn profile (headline, About, featured section, banner) using SEO keywords and value-driven copy. Built a structured outreach sequence targeting ideal buyers personalized connection requests → warm messages → meeting invite. Scaled the pipeline to 50+ qualified leads per month with a 28% acceptance rate.</p><div class="cs-results"><div class="cs-ri"><span class="cs-rn">50+</span><span class="cs-rl">Leads/Month</span></div><div class="cs-ri"><span class="cs-rn">28%</span><span class="cs-rl">Acceptance Rate</span></div><div class="cs-ri"><span class="cs-rn">3-Step</span><span class="cs-rl">Outreach Flow</span></div></div></div>
+        <div class="cs-body"><span class="cs-tag">LinkedIn · BD</span><div class="cs-title">50+ Qualified Leads/Month via LinkedIn Outreach</div><p class="cs-desc">Optimized a client's LinkedIn profile (headline, About, featured section, banner) using SEO keywords and value-driven copy. Built a structured outreach sequence targeting ideal buyers — personalized connection requests → warm messages → meeting invite. Scaled the pipeline to 50+ qualified leads per month with a 28% acceptance rate.</p><div class="cs-results"><div class="cs-ri"><span class="cs-rn">50+</span><span class="cs-rl">Leads/Month</span></div><div class="cs-ri"><span class="cs-rn">28%</span><span class="cs-rl">Acceptance Rate</span></div><div class="cs-ri"><span class="cs-rn">3-Step</span><span class="cs-rl">Outreach Flow</span></div></div></div>
       </div>
 
       <div class="cs-card fu">
@@ -664,7 +666,7 @@ footer{padding:2rem 5%;border-top:1px solid var(--border2);}
         <div class="ts-author"><div class="ts-av">MN</div><div><div class="ts-name">Muhammad Nawaz</div><div class="ts-role">Client, DM Worx</div></div></div>
       </div>
     </div>
-    <p style="text-align:center;color:var(--text3);font-size:.73rem;margin-top:1.1rem;font-style:italic;">* Replace with verified client testimonials — reach out to past clients to collect reviews.</p>
+    <p style="text-align:center;color:var(--text3);font-size:.73rem;margin-top:1.1rem;font-style:italic;">* Replace with verified client testimonials reach out to past clients to collect reviews.</p>
   </div>
 </section>
 
@@ -702,7 +704,7 @@ footer{padding:2rem 5%;border-top:1px solid var(--border2);}
           <a href="mailto:jh253895@gmail.com" class="con-link"><div class="cl-ico">📧</div><div><div style="font-weight:600;font-size:.83rem;color:var(--text)">Email</div><div style="font-size:.75rem;color:var(--text3)">jh253895@gmail.com</div></div></a>
           <a href="https://wa.me/923251569020" target="_blank" rel="noopener" class="con-link"><div class="cl-ico">💬</div><div><div style="font-weight:600;font-size:.83rem;color:var(--text)">WhatsApp</div><div style="font-size:.75rem;color:var(--text3)">+92325-1569020 · Quick replies</div></div></a>
           <a href="https://www.linkedin.com/in/muhammadjunaidhussain" target="_blank" rel="noopener" class="con-link"><div class="cl-ico">🔗</div><div><div style="font-weight:600;font-size:.83rem;color:var(--text)">LinkedIn</div><div style="font-size:.75rem;color:var(--text3)">Connect professionally</div></div></a>
-          <a href="https://drive.google.com/your-cv-link" target="_blank" rel="noopener" class="con-link"><div class="cl-ico">📄</div><div><div style="font-weight:600;font-size:.83rem;color:var(--text)">Download CV</div><div style="font-size:.75rem;color:var(--text3)">PDF · Updated 2026</div></div></a>
+          <a href="mailto:jh253895@gmail.com?subject=CV Request - Muhammad Junaid Hussain&body=Hi Junaid, please send me your CV. Thanks!" target="_blank" rel="noopener" class="con-link"><div class="cl-ico">📄</div><div><div style="font-weight:600;font-size:.83rem;color:var(--text)">Download CV</div><div style="font-size:.75rem;color:var(--text3)">Request via email · PDF 2026</div></div></a>
         </div>
       </div>
       <div class="fr2">
@@ -720,7 +722,6 @@ footer{padding:2rem 5%;border-top:1px solid var(--border2);}
           </div>
           <div class="fg"><label class="flbl">Message *</label><textarea class="fta" rows="4" id="fm" placeholder="Tell me about your project, goals, and timeline..."></textarea></div>
           <button class="sbtn" onclick="sendForm()"><span id="sbtxt">Send Message →</span></button>
-          <p style="font-size:.7rem;color:var(--text3);margin-top:.3rem;">* Powered by Formspree. Replace <code>YOUR_FORM_ID</code> in the script with your ID from <a href="https://formspree.io" target="_blank" style="color:var(--accent)">formspree.io</a> (free).</p>
         </div>
       </div>
     </div>
@@ -824,19 +825,24 @@ const skObs=new IntersectionObserver(entries=>{
 const sg=document.querySelector('.sk-grid');if(sg)skObs.observe(sg);
 
 /* ========= COUNTER ========= */
-const cntObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.querySelectorAll('[data-count]').forEach(el=>{
-        const target=+el.dataset.count,sfx=el.dataset.sfx||'';
-        let v=0;const step=Math.max(1,Math.ceil(target/55));
-        const t=setInterval(()=>{v=Math.min(v+step,target);el.textContent=v+sfx;if(v>=target)clearInterval(t);},28);
-      });
-      cntObs.unobserve(e.target);
-    }
+function runCounters(container){
+  container.querySelectorAll('[data-count]').forEach(el=>{
+    if(el.dataset.counted)return;
+    el.dataset.counted='1';
+    const target=+el.dataset.count,sfx=el.dataset.sfx||'';
+    let v=0;const step=Math.max(1,Math.ceil(target/55));
+    const t=setInterval(()=>{v=Math.min(v+step,target);el.textContent=v+sfx;if(v>=target)clearInterval(t);},28);
   });
-},{threshold:.6});
-document.querySelectorAll('.hcard').forEach(c=>cntObs.observe(c));
+}
+const cntObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){runCounters(e.target);cntObs.unobserve(e.target);}});
+},{threshold:.3});
+document.querySelectorAll('.hcard').forEach(c=>{
+  cntObs.observe(c);
+  /* Also fire immediately if already in viewport on load */
+  const rect=c.getBoundingClientRect();
+  if(rect.top<window.innerHeight&&rect.bottom>0)setTimeout(()=>runCounters(c),400);
+});
 
 /* ========= 3D CARD TILT ========= */
 document.querySelectorAll('.hcard').forEach(card=>{
@@ -853,19 +859,43 @@ async function sendForm(){
   const n=document.getElementById('fn').value.trim();
   const e=document.getElementById('fe').value.trim();
   const m=document.getElementById('fm').value.trim();
+  const s=document.getElementById('fs').value||'Not specified';
+  const b=document.getElementById('fb').value||'Not specified';
   if(!n||!e||!m){alert('Please fill in Name, Email, and Message.');return;}
-  const btn=document.getElementById('sbtxt');btn.textContent='Sending...';
-  try{
-    // Sign up at formspree.io → create form → replace YOUR_FORM_ID below
-    const res=await fetch('https://formspree.io/f/YOUR_FORM_ID',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name:n,email:e,service:document.getElementById('fs').value,budget:document.getElementById('fb').value,message:m})
-    });
-    if(res.ok){
-      document.getElementById('cform').style.display='none';
-      document.getElementById('fsucc').style.display='block';
-    }else{btn.textContent='Send Message →';alert('Error. Email directly: jh253895@gmail.com');}
-  }catch{btn.textContent='Send Message →';alert('Please email: jh253895@gmail.com');}
+  const btn=document.getElementById('sbtxt');
+  btn.textContent='Sending...';
+  /* -------------------------------------------------------
+     TO ACTIVATE FORMSPREE (takes 2 min, free):
+     1. Go to formspree.io and sign up
+     2. Create a new form → copy the 8-char form ID
+     3. Replace YOUR_FORM_ID below with your real ID
+     4. Delete the mailto fallback block after testing
+  ------------------------------------------------------- */
+  const FORM_ID='https://formspree.io/f/xvzlnodk';
+  if(FORM_ID!=='YOUR_FORM_ID'){
+    try{
+      const res=await fetch('https://formspree.io/f/'+FORM_ID,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({name:n,email:e,service:s,budget:b,message:m})
+      });
+      if(res.ok){
+        document.getElementById('cform').style.display='none';
+        document.getElementById('fsucc').style.display='block';
+        return;
+      }
+    }catch(err){}
+    btn.textContent='Send Message →';
+    alert('Submission failed. Opening email as fallback...');
+  }
+  /* Mailto fallback — works immediately without any setup */
+  const subject=encodeURIComponent('Project Inquiry from '+n);
+  const body=encodeURIComponent(
+    'Name: '+n+'\nEmail: '+e+'\nService: '+s+'\nBudget: '+b+'\n\nMessage:\n'+m
+  );
+  window.location.href='mailto:jh253895@gmail.com?subject='+subject+'&body='+body;
+  document.getElementById('cform').style.display='none';
+  document.getElementById('fsucc').style.display='block';
+  document.getElementById('fsucc').textContent='✓ Opening your email client with the message pre-filled!';
 }
 
 /* ========= SMOOTH SCROLL ========= */
